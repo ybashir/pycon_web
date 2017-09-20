@@ -1,0 +1,285 @@
+@import "presets.less";
+
+/* ==========================================================================
+   Roof Section Start
+   ========================================================================== */
+  #roof{
+    color: #fff;
+    font-size: 14px;
+    background: @preset;
+    .info-bar-address{
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 40px;
+    }
+    .quick-contacts{   
+      float: right;
+      span{
+        margin-right: 10px;
+        line-height: 40px;
+      }
+      a{
+        color: #fff;
+      }
+      i{
+        margin-right: 5px;
+        vertical-align: middle;
+        font-size: 15px;
+      }
+    }
+  }
+
+.navbar-default .navbar-toggle .icon-bar{
+  background: @preset;
+}
+// Sticky Nav
+.navbar-default.affix{
+  width: 100%; 
+  top: 0;
+  background: #2d2d2d;
+  z-index: 99999; 
+  -webkit-transition: all 400ms cubic-bezier(0.345,0.855,0.565,1) 10ms;
+  -moz-transition: all 400ms cubic-bezier(0.345,0.855,0.565,1) 10ms;
+  -o-transition: all 400ms cubic-bezier(0.345,0.855,0.565,1) 10ms;
+  transition: all 400ms cubic-bezier(0.345,0.855,0.565,1) 10ms;
+}
+.navbar-event.affix{
+  background: #fff !important;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.navbar{
+  margin-bottom: 0;
+}
+
+.navbar-default .navbar-nav >
+.active > a, 
+.navbar-default .navbar-nav > 
+.active > a:focus, 
+.navbar-default .navbar-nav > .active > a:hover{
+	background: transparent;
+	color: #fff;
+}
+// Start Logo Naviagtion
+.navbar-default{
+  margin-bottom: 0;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+}
+.navbar-brand{
+  position: relative;
+  padding: 0px 15px;
+}
+.navbar-nav{
+  a{
+    -moz-transition: color .3s linear,background .3s linear;
+    -webkit-transition: color .3s linear,background .3s linear;
+    -o-transition: color .3s linear,background .3s linear;  
+    transition: color .3s linear,background .3s linear;
+  }
+}
+.navbar-default{
+  .navbar-nav{
+    position: relative;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+    li{          
+      a{
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 14px;
+        display: block;
+        padding: 30px 0px;
+        text-decoration: none;
+        text-transform: uppercase;
+        margin-right: 24px;
+        font-weight: 400;
+        outline: 0;
+        &:before{
+          content: "";
+          display: inline-block;
+          height: 1px;
+          width: 0;
+          position: absolute;
+          background: rgba(255, 255, 255, 0.75);
+          left: 1px;
+          bottom: 21px;
+          -webkit-transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
+          -moz-transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
+          -o-transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
+          transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
+        }
+      }
+      a:hover,.active >a,a:focus{
+        color: #fff;
+        background: transparent !important;
+      }
+      a:hover:before,a:focus:before{
+        color: #fff;
+        width: 100%;
+      }
+    }
+    .active > a:before{
+      width: 100%;
+    }   
+ }
+}
+
+.navbar-event{
+  background: #fff;
+  .navbar-nav{
+    li{          
+      a{
+        color: #222222;
+        padding: 0 20px;
+        margin-right: 1px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        line-height: 40px;
+        border-radius: 50px;
+        &:before{
+          display: none;
+        }
+      }
+      a:hover,
+      .active > a,
+      a:focus{
+        color: @preset;
+      }
+    }
+     > .dropdown:hover > ul.dropdown-menu{
+      display: block;
+      -webkit-animation: fadeInUpMenu 0.3s;
+      -moz-animation: fadeInUpMenu 0.3s;
+      -ms-animation: fadeInUpMenu 0.3s;
+      -o-animation: fadeInUpMenu 0.3s;
+      animation: fadeInUpMenu 0.3s;
+  }
+ }
+
+ //Dropdown 
+.dropdown{
+  .dropdown-menu{
+    padding: 0;
+    border-style: solid;
+    border-width: 2px 0 0 0;
+    border-radius: 0;
+    left: -20px;
+    right: 0;
+    top: 78px;
+    width: 170px;
+    border-color: @preset;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    > li > a{
+      color: #222222; 
+      padding: 2px 20px; 
+      border-radius: 0;
+      margin: 0; 
+      text-transform: none;
+      -webkit-transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
+      -moz-transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
+      -o-transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
+      transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
+      &:hover, .active{
+        color: @preset;
+        }
+      }
+    > li.active > a{
+      background: @preset !important;
+      color: #fff;
+    }
+  }
+} 
+
+//Animation for Menu
+@-webkit-keyframes fadeInUpMenu { 
+    0% { 
+        opacity: 0; 
+        -webkit-transform: translateY(10px); 
+    } 
+    100% { 
+        opacity: 1; 
+        -webkit-transform: translateY(0); 
+    } 
+} 
+
+@keyframes fadeInUpMenu { 
+    0% { 
+        opacity: 0; 
+        transform: translateY(10px); 
+    } 
+    100% { 
+        opacity: 1; 
+        transform: translateY(0); 
+    } 
+} 
+
+  .fadeInUpMenu { 
+      -webkit-animation-name: fadeInUpMenu; 
+      animation-name: fadeInUpMenu;
+  }
+}
+.navbar-event .navbar-nav >
+.active > a, 
+.navbar-event .navbar-nav > 
+.active > a:focus, 
+.navbar-event .navbar-nav > .active > a:hover{
+  background: @preset !important;
+  color: #fff;
+}
+.navbar-event .navbar-nav > .active > a,
+.navbar-event .navbar-nav > .active > a:hover{
+  color: #fff;
+}
+.navbar-event .navbar-nav > .open > a,
+.navbar-event .navbar-nav > .open > a:focus,
+.navbar-event .navbar-nav > .open > a:hover {
+  background: transparent;
+}
+.caret{
+  border-top: none;
+  border-right: none;
+  position: relative;
+  &:before{
+  content: "\e604";
+  font-family: 'Simple-Line-Icons';
+  left: -2px;
+  top: -20px;
+  font-size: 11px;
+  float: right;
+  position: absolute;
+  }
+}
+// end Naviagtion
+
+// Mobile Menu
+.wpb-mobile-menu{
+  display: none;
+}
+.slicknav_menu {
+  display:none;
+}
+
+@media screen and (max-width: 767px) {
+  #wpb-mobile-menu {
+    display:none;
+  }
+  
+  .slicknav_menu {
+    display:block;
+  }
+  .slicknav_nav .active a{
+    background: @preset;
+    color: #fff;
+  }
+  .slicknav_nav a:hover, .slicknav_nav .active{
+    color: @preset;
+  }
+  .slicknav_nav .dropdown li a.active{
+    background: @preset;
+    color: #fff;
+  }
+}
+
