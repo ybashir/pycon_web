@@ -38,7 +38,7 @@ urlpatterns += [
     # one homepage pattern, so if you use a different one, comment this
     # one out.
 
-    #url("^$", direct_to_template, {"template": "index.html"}, name="home"),
+    #url("^$", direct_to_template, {"template": "home.html"}, name="home"),
 
     # HOMEPAGE AS AN EDITABLE PAGE IN THE PAGE TREE
     # ---------------------------------------------
@@ -50,7 +50,7 @@ urlpatterns += [
     # Also note that the normal rule of adding a custom
     # template per page with the template name using the page's slug
     # doesn't apply here, since we can't have a template called
-    # "/.html" - so for this case, the template "pages/index.html"
+    # "/.html" - so for this case, the template "pages/home.html"
     # should be used if you want to customize the homepage's template.
     # NOTE: Don't forget to import the view function too!
 

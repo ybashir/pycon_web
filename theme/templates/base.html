@@ -22,8 +22,11 @@
 
     <title>Impression | Bootstrap HTML5 Conference and Event Template</title>
 
+
     <!-- Bootstrap -->
-    <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.min.css"%}" >
+    <link rel="stylesheet" href="{% static "css/mezzanine.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.min.css"%}">
+    <link rel="stylesheet" href="{% static "css/bootstrap-theme.css" %}">
     <!-- Main Style -->
     <link rel="stylesheet" type="text/css" href="{% static "css/main.css"%}">
     <!-- Responsive Style -->
@@ -71,7 +74,6 @@
 <script src="{% static "js/bootstrap.js" %}"></script>
 <script src="{% static "js/bootstrap-extras.js" %}"></script>
 {% block extra_js %}{% endblock %}
-{% include "includes/footer_scripts.html" %}
 {% endcompress %}
 
 <!--[if lt IE 9]>
@@ -134,7 +136,7 @@
 
           <!-- Mobile Menu Start -->
           <ul class="wpb-mobile-menu">
-            <li class="active"><a href="index.html">Home</a></li>
+            <li class="active"><a href="/">Home</a></li>
             <li><a href="#">Pages</a>
                <ul class="dropdown">
                 <li><a href="about.html">About Us</a></li>
@@ -160,29 +162,24 @@
     <!-- Header Area wrapper End -->
 
 
+{% block main %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
 
+                {% editable page.richtextpage.content %}
+                {{ page.richtextpage.content|safe }}
+                {% endeditable %}
 
-{% block main %}{{ block.super }}
-{% editable page.richtextpage.content %}
-{{ page.richtextpage.content|safe }}
-{% endeditable %}
-{% endblock main %}
-
-
- <!-- Copytight Start -->
-    <section id="copyright">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <p class="copyright-text text-center">
-             © Python Community Pakistan
-              </a>
-            </p>
-          </div>
         </div>
-      </div>
-    </section>
-    <!-- Copytight End -->
+    </div>
+</div>
+{% endblock %}
+
+
+
+
+
 
 <!-- Footer Section Start -->
     <footer class="section">
@@ -225,9 +222,27 @@
       </div>
     </footer>
     <!-- Footer Section End -->
+ <!-- Copytight Start -->
+    <section id="copyright">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <p class="copyright-text text-center">
+             © Python Community Pakistan
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Copytight End -->
+
+    <!-- Go to Top Link -->
+    <a href="#" class="back-to-top">
+    <i class="icon-arrow-up"></i>
+    </a>
 
 
-{% compress js %}
     <!-- jQuery Load -->
     <script src="{% static "js/jquery.min.js"%}"></script>
     <!-- Bootstrap JS -->
@@ -254,7 +269,7 @@
     <script type="text/javascript" src="{% static "js/jquery.mapit.min.js"%}"></script>
     <script src="{% static "js/initializers.js"%}"></script>
     
-{% endcompress %}
 
+{% include "includes/footer_scripts.html" %}
 </body>
 </html>

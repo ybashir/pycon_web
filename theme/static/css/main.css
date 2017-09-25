@@ -16,6 +16,7 @@ body {
   -webkit-box-sizing: box-sizing;
   -moz-box-sizing: box-sizing;
   box-sizing: box-sizing;
+  padding-top: 0px;
 }
 h1,
 h2,
