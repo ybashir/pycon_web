@@ -1,26 +1,8 @@
 {% extends "base.html" %}
 {% load i18n  mezzanine_tags staticfiles%}
-{% block meta_title %}{% trans "Home" %}{% endblock %}
-{% block title %}{% trans "Home" %}{% endblock %}
-
-
+{% block meta_title %}{{ page.gallery.title }}{% endblock %}
+{% block title %}{{ page.gallery.title }}{% endblock %}
 
 {% block main %}
-        <!-- Page Header Start -->
-    <div class="page-header">
-      <div class="container">
-        <div class="page-header-inner">
-          <ol class="breadcrumb wow fadeInDown" data-wow-delay="300ms">
-            <li><a href="index.html">Home</a></li>
-            <li class="page">Gallery</li>
-          </ol>
-          <h1 class="page-title wow fadeInRight" data-wow-delay="300ms">
-            Gallery
-          </h1>
-        </div>
-      </div>
-    </div>
-    <!-- Page Header End-->
-
 {{ page.gallery.content|safe }}
 {% endblock %}

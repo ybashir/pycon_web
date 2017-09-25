@@ -336,3 +336,7 @@ except ImportError:
     pass
 else:
     set_dynamic_settings(globals())
+
+
+BLOG_USE_FEATURED_IMAGE = True
+SITE_TITLE = "PyCon Pakistan 2017"

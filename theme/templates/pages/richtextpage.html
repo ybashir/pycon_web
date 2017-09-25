@@ -1,19 +1,11 @@
-{% extends "pages/page.html" %}
+{% extends "base.html" %}
+{% load i18n  mezzanine_tags staticfiles%}
+{% block title %}{{ page.richtextpage.title }}{% endblock %}
 
-{% load mezzanine_tags %}
-{% block left_wrapper %}
-{% endblock %}
 
-<div class="col-md-{% block main_col_size %}8{% endblock %}">
-{% block main %}{{ block.super }}
 
-{% editable page.richtextpage.content %}
-{{ page.richtextpage.content|richtext_filters|safe }}
-{% endeditable %}
+{% block main %}
 
-{% endblock %}
-</div>
+    {{   block.super }}
 
-{% block right_panel %}
-{{block.super}}
 {% endblock %}

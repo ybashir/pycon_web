@@ -1,5 +1,6 @@
 {% extends "blog/blog_post_list.html" %}
-{% load mezzanine_tags comment_tags keyword_tags rating_tags i18n disqus_tags %}
+{% load mezzanine_tags comment_tags blog_tags keyword_tags rating_tags i18n disqus_tags %}
+
 
 {% block meta_title %}{{ blog_post.meta_title }}{% endblock %}
 
@@ -16,100 +17,250 @@
 {% editable blog_post.title %}{{ blog_post.title }}{% endeditable %}
 {% endblock %}
 
-{% block breadcrumb_menu %}
-{{ block.super }}
+
+{% block breadcrumbs %}
+            <!-- Page Header Start -->
+    <div class="page-header">
+      <div class="container">
+        <div class="page-header-inner">
+          <ol class="breadcrumb wow fadeInDown" data-wow-delay="300ms">
+            {% if not has_home and page.is_primary and forloop.first %}
+    <li id="breadcrumb-menu-home">
+        <a href="{% url "home" %}">{% trans "Home" %}</a>
+    </li>
+    {% endif %}
+
+
+    {% if page.is_current %}
+    <li id="breadcrumb-menu-{{ page.html_id }}"
+        class="active">{{ page.title }}</li>
+    {% else %}
+    <li id="breadcrumb-menu-{{ page.html_id }}">
+        <a href="{{ page.get_absolute_url }}">{{ page.title }}</a>
+    </li>
+    {% endif %}
+          </ol>
+          <h1 class="page-title wow fadeInRight" data-wow-delay="300ms">
+            {{ blog_post.title }}
+          </h1>
+        </div>
+      </div>
+    </div>
+    <!-- Page Header End-->
 
 {% endblock %}
 
 {% block main %}
+    <section id="content" class="section">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8">
+              <!-- Start Single Post Area -->
+              <div class="blog-post single-gallery">
+                <!-- Post feature-inner -->
+                <div class="feature-inner">
+                  <a class="lightbox" href="{{ MEDIA_URL }}{{ blog_post.featured_image }}"><img class="" src="{{ MEDIA_URL }}{{ blog_post.featured_image }}"></a>
+                </div>
+                <!-- End Post feature-inner -->
+                <!-- Post format icon -->
+                <div class="post-format">
+                  <span>
+                    <a href="#"><i class="icon-picture"></i></a>
+                  </span>
+                </div>
+                <!-- Post Content -->
+                <div class="post-content">
+                  <h3 class="post-title"><a href="#">{{ blog_post.title }}</a></h3>
+                                    <div class="meta">
+                                      <span class="meta-part"><a href="{% url "blog_post_list_author" author %}">
+                                          {% with blog_post.user as author %}
+                                              <i class="icon-user"></i>
+                                              {{ author.get_full_name|default:author.username }}
+                                          {% endwith %}</a></span>
+                                        <span class="meta-part"><a href="#"><i class="icon-calendar"></i>
+                                            {% blocktrans with sometime=blog_post.publish_date|timesince %}
+                                                {{ sometime }} ago{% endblocktrans %}</a></span>
+                                    </div>
+                    {% block blog_post_detail_content %}
+                    {% editable blog_post.content %}
+                    {{ blog_post.content|richtext_filters|safe }}
+                    {% endeditable %}
+                    {% endblock %}                    <!-- Share social -->
+                    <div class="share">
+                      <div class="social-link">
+                        <span>Share this Post</span>
+                        <a class="twitter" target="_blank" data-original-title="twitter" href="#" data-toggle="tooltip" data-placement="top"><i class="fa fa-twitter"></i></a>
+                        <a class="facebook" target="_blank" data-original-title="facebook" href="#" data-toggle="tooltip" data-placement="top"><i class="fa fa-facebook"></i></a>
+                        <a class="google" target="_blank" data-original-title="google-plus" href="#" data-toggle="tooltip" data-placement="top"><i class="fa fa-google-plus"></i></a>
+                        <a class="linkedin" target="_blank" data-original-title="linkedin" href="#" data-toggle="tooltip" data-placement="top"><i class="fa fa-linkedin"></i></a>
+                      </div>
+                    </div>
+                </div>
+                <!-- Post Content -->
+              </div>
+              <!-- End Single Post Area -->
 
-	{% block blog_post_main%}
-		{{ block.super }}
-		
-		{% block blog_post_list_post_content %}
-			
-		{% endblock %}
-		{% block blog_post_detail_content %}
-		{% editable blog_post.content %}
-		{{ blog_post.content|richtext_filters|safe }}
-		{% endeditable %}
-		{% endblock %}
-		
-		{% block read_more%}
-		{% endblock %}
-	{% endblock %}	
-
-{% block blog_post_detail_keywords %}
-{% keywords_for blog_post as tags %}
-{% if tags %}
-{% spaceless %}
-<ul class="list-inline tags">
-    <li>{% trans "Tags" %}:</li>
-    {% for tag in tags %}
-    <li><a href="{% url "blog_post_list_tag" tag.slug %}">{{ tag }}</a></li>
-    {% endfor %}
-</ul>
-{% endspaceless %}
-{% endif %}
-{% endblock %}
-
-{% block blog_post_detail_rating %}
-<div class="panel panel-default rating">
-    <div class="panel-body">
-    {% rating_for blog_post %}
-    </div>
-</div>
-{% endblock %}
-
-{% block blog_post_detail_sharebuttons %}
-{% set_short_url_for blog_post %}
-
-<div class="bottom-article">
-		<ul class="meta-post">
-		<li>Share</li>
-		<li><a class="" target="_blank" href="http://twitter.com/home?status={{ blog_post.short_url|urlencode }}%20{{ blog_post.title|urlencode }}"><strong><i class="fa fa-twitter"></i> </strong></a></li>
-		<li><a class="" target="_blank" href="http://facebook.com/sharer.php?u={{ request.build_absolute_uri }}&amp;t={{ blog_post.title|urlencode }}"><i class="fa fa-facebook"></i></a>
-
-		</ul>
-		
-	</div>
+              <!-- Start Comment Area -->
+              <div id="comments">
 
 
-{% endblock %}
 
-{% block blog_post_previous_next %}
-<ul class="pager">
-{% with blog_post.get_previous_by_publish_date as previous %}
-{% if previous %}
-<li class="previous">
-    <a href="{{ previous.get_absolute_url }}"><i class="fa fa-arrow-left"></i> {{ previous }}</a>
-</li>
-{% endif %}
-{% endwith %}
-{% with blog_post.get_next_by_publish_date as next %}
-{% if next %}
-<li class="next">
-    <a href="{{ next.get_absolute_url }}">{{ next }} <i class="fa fa-arrow-right"></i>
-{% endif %}
-{% endwith %}
-</ul>
-{% endblock %}
+                <!-- Start Respond Form -->
+                <div id="respond">
+                  <form action="#">
+                    <div class="row">
+                      <div class="col-md-4">
+                        <input id="author" class="form-control" name="author" type="text" value="" size="30" placeholder="Full Name">
+                      </div>
+                      <div class="col-md-4">
+                        <input id="email" class="form-control" name="author" type="text" value="" size="30" placeholder="Email Address">
+                      </div>
+                      <div class="col-md-4">
+                      <input id="url" class="form-control" name="url" type="text" value="" size="30" placeholder="Website">
+                      </div>
+                      <div class="col-md-12">
+                        <textarea id="comment" class="form-control" name="comment" cols="102" rows="8" placeholder="Messages"></textarea>
+                        <button type="submit" id="submit" class="btn btn-common">Submit Review</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <!-- End Respond Form -->
+              </div>
+              <!-- End Comment Area -->
+            </div>
 
-{% block blog_post_detail_related_posts %}
-{% if blog_post.related_posts.all %}
-<div id="related-posts">
-<h3>{% trans 'Related posts' %}</h3>
-<ul class="list-unstyled">
-{% for post in blog_post.related_posts.all %}
-     <li><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></li>
-{% endfor %}
-</ul>
-</div>
-{% endif %}
-{% endblock %}
+            <!--Sidebar-->
+                <aside id="sidebar" class="col-md-4 right-sidebar">
+                    <!-- Search Widget -->
+                    <div class="widget widget-search">
+                        <form action="#">
+                            <input class="form-control" type="search" placeholder="Start Searching..."/>
+                            <button class="search-btn" type="submit"><i class="fa fa-search"></i></button>
+                        </form>
+                    </div>
 
-{% block blog_post_detail_comments %}
-{% if blog_post.allow_comments %}{% comments_for blog_post %}{% endif %}
-{% endblock %}
+                    <!-- Popular Posts widget -->
+                    <div class="widget widget-popular-posts">
+                        <h5 class="widget-title">Recent Posts</h5>
+                        <ul class="posts-list">
+                            {%  blog_recent_posts limit=5 as recent_posts %}
+                            {% for post in recent_posts %}
+                            <li>
+                                <div class="widget-thumb">
+                                        <a href="#"><img src="/static/media/uploads/blog/p1.jpg" alt=""/></a>
+                                    </div>
+                                    <div class="widget-content">
+                                        <a href="#">{{ post.title }}</a>
+                                        <span><i class="icon-calendar"></i>{{ post.publish_date }}</span>
+                                        <span><i class="icon-folder"></i>Blog</span>
+                                    </div>
+                            <div class="clearfix"></div>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
+                    <!-- Categories Widget -->
+                    <div class="widget widget-categories">
+                        <h5 class="widget-title">Categories</h5>
+                        <ul class="cat-list">
+                            {% blog_categories as categories %}
+                                {% if categories %}
+                                    {% for category in categories %}
+                                        <li>
+                                            <a href="#">{{ category.title }}</a>
+                                            <span class="num-posts">{{ categories.count }}</span>
+                                        </li>
+                                    {% endfor %}
+                                {% endif %}
+
+                        </ul>
+                    </div>
+
+                    <!-- Posts slider Widget -->
+                    <div class="widget">
+                        <h5 class="widget-title">Post Carousel</h5>
+                        <div id="post-carousel" class="post-slide owl-carousel" data-slider-pagination="true">
+                            <div class="item">
+                                <a class="lightbox" href="/static/media/uploads/blog/img1.jpg"><img
+                                        src="/static/media/uploads/blog/img1.jpg"
+                                        alt=""></a>
+                                <div class="post-content">
+                                    <h3><a href="#">Brooklyn Beta was the most important conference</a></h3>
+                                    <div class="meta">
+                                        <span class="meta-part"><a href="#"><i class="icon-calendar"></i> Fabruary 25,
+                                            2015</a></span>
+                                        <span class="meta-part"><a href="#"><i class="icon-event"></i> Events</a></span>
+                                    </div>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum quo harum
+                                        ipsa
+                                        eaque laudantium sed eligendi nostrum nemo tempore recusandae.</p>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <a class="lightbox" href="/static/media/uploads/blog/img4.jpg"><img
+                                        src="/static/media/uploads/blog/img4.jpg"
+                                        alt=""></a>
+                                <div class="post-content">
+                                    <h3><a href="#">Brooklyn Beta was the most important conference</a></h3>
+                                    <div class="meta">
+                                        <span class="meta-part"><a href="#"><i class="icon-calendar"></i> Fabruary 25,
+                                            2015</a></span>
+                                        <span class="meta-part"><a href="#"><i class="icon-event"></i> Events</a></span>
+                                    </div>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum quo harum
+                                        ipsa
+                                        eaque laudantium sed eligendi nostrum nemo tempore recusandae.</p>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <a class="lightbox" href="/static/media/uploads/blog/img5.jpg"><img
+                                        src="/static/media/uploads/blog/img5.jpg"
+                                        alt=""></a>
+                                <div class="post-content">
+                                    <h3><a href="#">Brooklyn Beta was the most important conference</a></h3>
+                                    <div class="meta">
+                                        <span class="meta-part"><a href="#"><i class="icon-calendar"></i> Fabruary 25,
+                                            2015</a></span>
+                                        <span class="meta-part"><a href="#"><i class="icon-event"></i> Events</a></span>
+                                    </div>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum quo harum
+                                        ipsa
+                                        eaque laudantium sed eligendi nostrum nemo tempore recusandae.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Media -->
+                    <div class="widget widget-social">
+                        <h5 class="widget-title">Social Media</h5>
+                        <div class="social-link">
+                            <a class="twitter" target="_blank" href="#"><i class="fa fa-twitter"></i></a>
+                            <a class="facebook" target="_blank" href="#"><i class="fa fa-facebook"></i></a>
+                            <a class="google" target="_blank" href="#"><i class="fa fa-google-plus"></i></a>
+                            <a class="linkedin" target="_blank" href="#"><i class="fa fa-linkedin"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Tag Media -->
+                    <div class="widget tag">
+                        <h5 class="widget-title">Tag Cloud</h5>
+                        <a href="#"><i class="fa fa-tag"></i> art</a>
+                        <a href="#"><i class="fa fa-tag"></i> Camera</a>
+                        <a href="#"><i class="fa fa-tag"></i> Coffee</a>
+                        <a href="#"><i class="fa fa-tag"></i> design</a>
+                        <a href="#"><i class="fa fa-tag"></i> gallery</a>
+                        <a href="#"><i class="fa fa-tag"></i> life</a>
+                        <a href="#"><i class="fa fa-tag"></i> lyrics</a>
+                        <a href="#"><i class="fa fa-tag"></i> photography</a>
+                        <a href="#"><i class="fa fa-tag"></i> record</a>
+                    </div>
+                </aside>
+                <!--End sidebar-->
+          </div>
+        </div>
+      </section>
 
 {% endblock %}
