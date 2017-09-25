@@ -8,7 +8,7 @@ To recreate the dev set-up:
 
 * create a virtualenv with Python 2.7
 * clone the repo
-* run ```pip install -r requirements.tt```
+* run ```pip install -r requirements.txt```
 * create a local_settings.py file similar to the one listed in mezzanine docs
 * run ```python manage.py migrate```
 * run ```python manage.py collectstatic```
