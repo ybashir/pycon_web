@@ -14,4 +14,12 @@ To recreate the dev set-up:
 * run ```python manage.py collectstatic```
 * run ```python manage.py runserver```
 
+There are a few additional things you need to do to get the homepage showing up in your local environment:
+
+* add all of the theme images to the media gallery. For this, log on to the local admin (typically http://localhost:8000/admin) the upload the entire hierarchy from /theme/static/img to the media gallery. Because we content authors to be able to modify the images themselves, we need to replicate them in the media library
+
+* create a new page called Home (with slug / in meta-data). The content for this page can be obtained from the staging site (Currently pycon.arbisoft.com) by logging in as admin and copying the source-html for home over to your local environment.
+
+Now your homepage should start appearing as you want.
+
 You can make changes to the code and submit a PR. Ill review your changes and integrate.
