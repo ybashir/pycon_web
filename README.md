@@ -6,7 +6,7 @@ http://mezzanine.jupo.org
 
 To recreate the dev set-up:
 
-* create a virtualenv with Python 2.7
+* create a virtualenv (based on Python 2.7 not 3)
 * clone the repo
 * run ```pip install -r requirements.txt```
 * create a local_settings.py file similar to the one listed in mezzanine docs
