@@ -12,6 +12,7 @@ To recreate the dev set-up:
 * create a local_settings.py file similar to the one listed in mezzanine docs
 * run ```python manage.py migrate```
 * run ```python manage.py collectstatic```
+* run ```python manage.py createsuperuer``` 
 * run ```python manage.py runserver```
 
 There are a few additional things you need to do to get the homepage showing up in your local environment:
