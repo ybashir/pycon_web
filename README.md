@@ -20,6 +20,6 @@ There are a few additional things you need to do to get the homepage showing up 
 
 * create a new page called Home (with slug / in meta-data). The content for this page can be obtained from the staging site (Currently pycon.arbisoft.com) by logging in as admin and copying the html source for home over to your local dev CMS.
 
-Now your homepage should start appearing as you want.
+Now your homepage should start appearing.
 
 You can make changes to the code and submit a PR. Ill review your changes and integrate.
