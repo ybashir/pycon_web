@@ -12,6 +12,7 @@ class Speaker(Displayable):
     profile_image = FileField(verbose_name=_("Profile Image"),
                               upload_to=upload_to("", "teacher"),
                               format="Image", max_length=255, null=True, blank=True)
+    featured = models.BooleanField(default=False)
     facebook_link = models.URLField(blank=True, null=True)
     twitter_link = models.URLField(blank=True, null=True)
     linked_in_link = models.URLField(blank=True, null=True)
