@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load i18n mezzanine_tags blog_tags speaker_tags%}
+{% load i18n mezzanine_tags blog_tags speaker_tags slides_tags %}
 
 {% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Home - PyCon Pakistan" %}
 {% endif %}{% endblock %}
@@ -12,35 +12,17 @@
     <div id="carousel-area">
         <div class="carousel slide" data-ride="carousel" id="carousel-slider"><!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
-                <div class="item active"><img alt="" src="/static/media/uploads/slider/bg-1.jpg"/>
+                {% all_slides as slides %}
+                {% for slide in slides %}
+                <div class="item{% if forloop.first %} active{% endif %}"><img alt="" src="{{ MEDIA_URL }}{{ slide.background_image }}"/>
                     <div class="carousel-caption">
-                        <h2 class="wow fadeInRight" data-wow-delay="300ms">PyCon Pakistan 2017<br/> Largest ever
-                            gathering of Pythonistas in Pakistan</h2>
-                        <div class="buttons wow fadeInDown" data-wow-delay="0.2s"><a class="btn btn-lg btn-border"
-                                                                                     href="#">Registration</a></div>
+                        <h2 class="wow fadeInRight" data-wow-delay="300ms">{{ slide.title }}<br/>
+                        {{ slide.sub_text }}</h2>
+                        {{ slide.links|safe }}
                         <div class="rev-scroll-btn wow fadeInUp" data-wow-delay="600ms"><span></span></div>
                     </div>
                 </div>
-                <div class="item"><img alt="" src="/static/media/uploads/slider/bg-2.jpg"/>
-                    <div class="carousel-caption">
-                        <h2 class="wow fadeInUp" data-wow-delay="300ms">Opportunity to learn<br/> from serious Python
-                            practitioners</h2>
-                        <div class="buttons"><a class="btn btn-lg btn-common wow fadeInLeft" data-wow-delay="300ms"
-                                                href="#">Buy Tickets</a> <a
-                                class="btn btn-lg btn-border wow fadeInRight" data-wow-delay="300ms" href="#">Know
-                            More</a></div>
-                        <div class="rev-scroll-btn wow fadeInUp" data-wow-delay="600ms"><span></span></div>
-                    </div>
-                </div>
-                <div class="item"><img alt="" src="/static/media/uploads/slider/bg-3.jpg"/>
-                    <div class="carousel-caption">
-                        <h2 class="wow fadeInDown" data-wow-delay="300ms">Expert and Love to Speak? <br/> Apply as a
-                            Speaker</h2>
-                        <div class="wow fadeInUp" data-wow-delay="300ms"><a class="btn btn-lg btn-common" href="#">Apply
-                            Now</a></div>
-                        <div class="rev-scroll-btn wow fadeInUp" data-wow-delay="600ms"><span></span></div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
             <!-- Controls --> <a class="left carousel-control" data-slide="prev" href="#carousel-slider" role="button">
                 <span aria-hidden="true" class="icon-arrow-left"></span> </a> <a class="right carousel-control"
