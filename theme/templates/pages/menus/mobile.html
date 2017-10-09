@@ -1,32 +1,38 @@
 {% load i18n pages_tags %}
-
 {% spaceless %}
-{% if page_branch %}
-{% for page in page_branch %}
+{% if page_branch_in_menu %}
 
-	{% if not has_home and page.is_primary and forloop.first %}
-	<ul class="mobile-menu">
-		<li><a class="home" href="{% url "home" %}"
-			   id="tree-menu-home">{% trans "Home" %}</a></li>
-    {% endif %}
-
-		{% if page.is_current_or_ascendant and not page.is_current_child %}
+{% if branch_level == 0 %}
+<ul class="wpb-mobile-menu">
+    {% for page in page_branch %}
+    {% if page.in_menu %}
+    <li class="{% if page.has_children_in_menu %}dropdown{% endif %}
+    {% if page.is_current_or_ascendant and not page.has_children_in_menu %}active{% endif %}"
+        id="{{ page.html_id }}">
+        <a class="{% if page.is_current_or_ascendant and page.has_children_in_menu %}active{% endif %}"
+           href="{{ page.get_absolute_url }}"
+        {% if page.has_children_in_menu %}
+        class="dropdown-toggle disabled" data-toggle="dropdown"
+        {% endif %}>
+            {{ page.title }}
+        </a>
         {% if page.has_children_in_menu %}{% page_menu page %}{% endif %}
-		{% endif %}
+    </li>
+    {% endif %}
+    {% endfor %}
+</ul>
 
-		{% if page.is_current_child %}
-		<li class="
-			{% if forloop.first %} first{% endif %}
-			{% if forloop.last %} last{% endif %}"
-			id="mobile-menu-{{ page.html_id }}">
-			<a href="{{ page.get_absolute_url }}">{{ page.title }}</a>
-		</li>
-		{% endif %}
+{% else %}
+<ul class="dropdown">
+    {% for page in page_branch %}
+    {% if page.in_menu %}
+    <li class="{% if page.is_current_or_ascendant %}active{% endif %}">
+        <a href="{{ page.get_absolute_url }}">{{ page.title }}</a>
+    </li>
+    {% endif %}
+    {% endfor %}
+</ul>
+{% endif %}
 
-	{% if page.is_primary and forloop.last %}
-	</ul>
-	{% endif %}
-
-{% endfor %}
 {% endif %}
 {% endspaceless %}
