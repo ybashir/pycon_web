@@ -1,0 +1,345 @@
+{% extends "base.html" %}
+{% load i18n mezzanine_tags blog_tags speaker_tags slides_tags %}
+
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Home - PyCon Pakistan" %}
+{% endif %}{% endblock %}
+
+{% block breadcrumbs %}
+{% endblock %}
+{% block main %}
+    <!-- Home Section Start -->
+    <!-- Main Slider Section Start -->
+    <div id="carousel-area">
+        <div class="carousel slide" data-ride="carousel" id="carousel-slider"><!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                {% all_slides as slides %}
+                {% for slide in slides %}
+                <div class="item{% if forloop.first %} active{% endif %}"><img alt="" src="{{ MEDIA_URL }}{{ slide.background_image }}"/>
+                    <div class="carousel-caption">
+                        <h2 class="wow fadeInRight" data-wow-delay="300ms">{{ slide.title }}<br/>
+                        {{ slide.sub_text }}</h2>
+                        {{ slide.links|safe }}
+                        <div class="rev-scroll-btn wow fadeInUp" data-wow-delay="600ms"><span></span></div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <!-- Controls --> <a class="left carousel-control" data-slide="prev" href="#carousel-slider" role="button">
+                <span aria-hidden="true" class="icon-arrow-left"></span> </a> <a class="right carousel-control"
+                                                                                 data-slide="next"
+                                                                                 href="#carousel-slider" role="button">
+                <span aria-hidden="true" class="icon-arrow-right"></span> </a></div>
+    </div>
+    <!-- Main Slider Section End -->
+    <p></p>
+    <!-- Coundown Section Start -->
+    <section class="countdown-timer section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12 wow fadeInLeft">
+                    <div class="text">
+                        <h2>PyCon <br/>Pakistan</h2>
+                        <h4>FAST Campus, Lahore <br/> Dec 16, 2017 - Dec 17, 2017</h4>
+                        <a class="btn btn-lg btn-common" href="pricing.html">Buy Tickets</a></div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12 wow fadeInRight">
+                    <div class="time-countdown">
+                        <div class="time-count" id="clock"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Coundown Section End -->
+    <p></p>
+    <!-- Welocme Event Start -->
+    <section class="section" id="event">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="tab-block wow fadeInDown">
+                        <div class="icon"><i class="icon-location-pin"></i></div>
+                        <div class="desc">
+                            <h4>Location</h4>
+                            <p>Marriott Marquis, San Francisco</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="tab-block wow fadeInDown">
+                        <div class="icon"><i class="icon-calendar"></i></div>
+                        <div class="desc">
+                            <h4>Date &amp; Time</h4>
+                            <p>1PM - 11PM, 25- 28 Jan</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="tab-block wow fadeInDown">
+                        <div class="icon"><i class="icon-microphone"></i></div>
+                        <div class="desc">
+                            <h4>Speakers</h4>
+                            <p>10 Tech Icons and Professionals</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="tab-block last-block wow fadeInDown">
+                        <div class="icon"><i class="icon-wallet"></i></div>
+                        <div class="desc left">
+                            <h4>Tickets</h4>
+                            <p>150 People</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="content-text">
+                        <h3 class="wow fadeInUp">Get fresh insights into the world of tech and startups</h3>
+                        <p class="wow fadeInUp">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+                            ligula eget dolor. A enean massa. Cum sociis natoque penatibus et magnis dis parturient
+                            montes Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Welocme Event End -->
+    <p></p>
+    <!-- Featured Section Start -->
+    <section class="section" id="featured">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="section-title wow fadeInUp">Why Join</h2>
+                    <p class="section-subcontent wow fadeInUp">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                        Aenean commodo ligula eget dolor. A <br/> enean massa. Cum sociis natoque penatibus et magnis
+                        dis parturient montes.</p>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="featured-box wow fadeInLeft">
+                            <div class="icon"><i class="icon-energy"></i></div>
+                            <div class="featured-content">
+                                <h4>Get Inspired</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget
+                                    dolor. Aenean massa. Cum sociis natoque</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="featured-box wow fadeInLeft">
+                            <div class="icon"><i class="icon-people"></i></div>
+                            <div class="featured-content">
+                                <h4>Meet New Faces</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget
+                                    dolor. Aenean massa. Cum sociis natoque</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="featured-box wow fadeInLeft">
+                            <div class="icon"><i class="icon-graph"></i></div>
+                            <div class="featured-content">
+                                <h4>Fresh Tech Insights</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget
+                                    dolor. Aenean massa. Cum sociis natoque</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Featured Section End -->
+    <p></p>
+    <!-- Sponsors Section Start -->
+    <section class="section" id="sponsors">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="section-title wow fadeInUp">Our Sponsors</h2>
+                    <p class="section-subcontent wow fadeInUp">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                        Aenean commodo ligula eget dolor. A <br/> enean massa. Cum sociis natoque penatibus et magnis
+                        dis parturient montes.</p>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="spnsors-logo wow fadeInUp"><a href="#"><img alt=""
+                                                                            src="static/media/uploads/sponsors/logo-01.png"/></a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="spnsors-logo wow fadeInUp"><a href="#"><img alt=""
+                                                                            src="static/media/uploads/sponsors/logo-02.png"/></a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="spnsors-logo wow fadeInUp"><a href="#"><img alt=""
+                                                                            src="static/media/uploads/sponsors/logo-03.png"/></a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="spnsors-logo wow fadeInUp"><a href="#"><img alt=""
+                                                                            src="static/media/uploads/sponsors/logo-04.png"/></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Sponsors Section End -->
+    <p></p>
+    <!-- Gallery Section Start -->
+    <section class="section" id="gallery">
+        <div class="container">
+            <div class="col-md-12">
+                <h2 class="section-title wow fadeInUp">Our Gallery</h2>
+                <p class="section-subcontent wow fadeInUp">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                    Aenean commodo ligula eget dolor. A <br/> enean massa. Cum sociis natoque penatibus et magnis dis
+                    parturient montes.</p>
+            </div>
+            <div class="gallery-wrap wow fadeInDown">
+                <div class="col-md-4 col-sm-4 col-xs-12 gellery-pn">
+                    <div class="gallery-item"><a href="#"><img alt="" src="static/media/uploads/gallery/img-1.jpg"/></a>
+                        <div class="overlay">
+                            <div class="icons"><a class="preview lightbox"
+                                                  href="static/media/uploads/gallery/img-1.jpg"><i class="icon-eye"></i></a>
+                                <a class="link" href="/gallery/"><i class="icon-link"></i></a></div>
+                        </div>
+                    </div>
+                    <div class="gallery-item"><a href="#"><img alt="" src="static/media/uploads/gallery/img-2.jpg"/></a>
+                        <div class="overlay">
+                            <div class="icons"><a class="preview lightbox"
+                                                  href="static/media/uploads/gallery/img-2.jpg"><i class="icon-eye"></i></a>
+                                <a class="link" href="/gallery/"><i class="icon-link"></i></a></div>
+                        </div>
+                    </div>
+                    <div class="gallery-item"><a href="#"><img alt="" src="static/media/uploads/gallery/img-3.jpg"/></a>
+                        <div class="overlay">
+                            <div class="icons"><a class="preview lightbox"
+                                                  href="static/media/uploads/gallery/lagre-3.jpg"><i
+                                    class="icon-eye"></i></a> <a class="link" href="/gallery/"><i class="icon-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12 gellery-pn">
+                    <div class="gallery-item"><a href="#"><img alt="" src="static/media/uploads/gallery/img-4.jpg"/></a>
+                        <div class="overlay">
+                            <div class="icons"><a class="preview lightbox"
+                                                  href="static/media/uploads/gallery/img-4.jpg"><i class="icon-eye"></i></a>
+                                <a class="link" href="/gallery/"><i class="icon-link"></i></a></div>
+                        </div>
+                    </div>
+                    <div class="gallery-item"><a href="#"><img alt="" src="static/media/uploads/gallery/img-5.jpg"/></a>
+                        <div class="overlay">
+                            <div class="icons"><a class="preview lightbox"
+                                                  href="static/media/uploads/gallery/img-5.jpg"><i class="icon-eye"></i></a>
+                                <a class="link" href="/gallery/"><i class="icon-link"></i></a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12 gellery-pn">
+                    <div class="gallery-item"><a href="#"><img alt="" src="static/media/uploads/gallery/img-6.jpg"/></a>
+                        <div class="overlay">
+                            <div class="icons"><a class="preview lightbox"
+                                                  href="static/media/uploads/gallery/img-6.jpg"><i class="icon-eye"></i></a>
+                                <a class="link" href="/gallery/"><i class="icon-link"></i></a></div>
+                        </div>
+                    </div>
+                    <div class="gallery-item"><a href="#"><img alt="" src="static/media/uploads/gallery/img-7.jpg"/></a>
+                        <div class="overlay">
+                            <div class="icons"><a class="preview lightbox"
+                                                  href="static/media/uploads/gallery/img-7.jpg"><i class="icon-eye"></i></a>
+                                <a class="link" href="/gallery/"><i class="icon-link"></i></a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="more-btn"><a class="btn btn-common wow fadeInUp" href="/gallery/">show more</a></div>
+            </div>
+        </div>
+    </section>
+    <!-- Gallery Section End -->
+    <p></p>
+    <!-- Speakers Section Start -->
+    <section class="section" id="speakers">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="section-title wow fadeInUp">Meet Our Speakers</h2>
+                    <p class="section-subcontent wow fadeInUp">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                        Aenean commodo ligula eget dolor. A <br/> enean massa. Cum sociis natoque penatibus et magnis
+                        dis parturient montes.</p>
+                </div>
+                {% featured_speakers 3 as speakers %}
+                {% for speaker in speakers %}
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="speakers-member wow fadeIn">
+                        <div class="member-img"><img alt="" src="{{ MEDIA_URL }}{{ speaker.profile_image }}"/></div>
+                        <div class="member-desc">
+                            <h3>{{ speaker.title }}</h3>
+                            <h5>{{ speaker.designation }}, {{ speaker.organization }}</h5>
+                            {{ speaker.bio|truncatechars_html:100|richtext_filters|safe }}
+                            <div class="social-icon">
+                            {% if speaker.facebook_link %}
+                                <a class="social" href="{{ speaker.facebook_link }}" target="_blank">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                            {% endif %}
+                            {% if speaker.twitter_link %}
+                                <a class="social" href="{{ speaker.twitter_link }}" target="_blank">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                            {% endif %}
+                            {% if speaker.linked_in_link %}
+                                <a class="social" href="{{ speaker.linked_in_link }}" target="_blank">
+                                    <i class="fa fa-linkedin"></i>
+                                </a>
+                            {% endif %}
+                            {% if speaker.dribble_link %}
+                                <a class="social" href="{{ speaker.dribble_link }}" target="_blank">
+                                    <i class="fa fa-dribbble"></i>
+                                </a>
+                            {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                <div class="more-btn text-center"><a class="btn btn-common wow fadeInUp" href="">show
+                    more</a></div>
+            </div>
+        </div>
+    </section>
+    <!-- Speakers Section End -->
+    <p></p>
+    <!-- Blog Section Start -->
+    <section class="section" id="blog">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="section-title wow fadeInUp">Blog</h2>
+                    <p class="section-subcontent wow fadeInUp">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                        Aenean commodo ligula eget dolor. A <br/> enean massa. Cum sociis natoque penatibus et magnis
+                        dis parturient montes.</p>
+                </div>
+                {% blog_recent_posts 3 as recent_posts %}
+                {% for post in recent_posts %}
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="blog-item wow fadeInRight">
+                        <div class="blog-image"><a href="{{ post.get_absolute_url }}"> <img alt="" src="{{ MEDIA_URL }}{{ post.featured_image }}"/> </a>
+                        </div>
+                        <div class="blog-info">
+                            <h3><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3>
+                            <div class="meta">
+                                <span class="meta-part">
+                                    <i class="icon-calendar"></i> {{ post.publish_date }}
+                                </span>
+                            </div>
+                            {{ post.content|truncatechars_html:100|richtext_filters|safe }}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!-- Blog Section End -->
+    <!-- Home Section End -->
+{% endblock %}
