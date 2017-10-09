@@ -130,30 +130,10 @@
     {% block navbar_dropdown_menu %}{% page_menu "pages/menus/dropdown.html" %}{% endblock%}
 </div>
 
-
-
-
-
           <!-- Mobile Menu Start -->
-          <ul class="wpb-mobile-menu">
-            <li class="active"><a href="/">Home</a></li>
-            <li><a href="#">Pages</a>
-               <ul class="dropdown">
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="pricing.html">Pricing Table</a></li>
-                <li><a href="sponsors.html">Sponsors</a></li>
-                <li><a href="single-post.html">Single Post</a></li>
-              </ul>
-            </li>
-            <li><a href="schedule.html">Schedule</a></li>
-            <li><a href="speakers.html">Speakers</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="pricing.html">Buy Tickets</a></li>
-            <li><a href="contact.html">Contact</a></li>
-           </ul>
+          {% page_menu "pages/menus/mobile.html"%}
           <!-- Mobile Menu End -->
-
+          </div>
         </nav>
       </div>
       <!-- Nav Menu Section End -->
