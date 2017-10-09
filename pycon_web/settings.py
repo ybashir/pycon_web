@@ -1,10 +1,8 @@
-
 from __future__ import absolute_import, unicode_literals
 import os
 
 from django import VERSION as DJANGO_VERSION
 from django.utils.translation import ugettext_lazy as _
-
 
 ######################
 # MEZZANINE SETTINGS #
@@ -85,7 +83,6 @@ from django.utils.translation import ugettext_lazy as _
 # INSTALLED_APPS setting.
 USE_MODELTRANSLATION = False
 
-
 ########################
 # MAIN DJANGO SETTINGS #
 ########################
@@ -112,7 +109,7 @@ LANGUAGE_CODE = "en"
 
 # Supported languages
 LANGUAGES = (
-    ('en', _('English')),
+  ('en', _('English')),
 )
 
 # A boolean that turns on/off debug mode. When set to ``True``, stack traces
@@ -135,28 +132,26 @@ AUTHENTICATION_BACKENDS = ("mezzanine.core.auth_backends.MezzanineBackend",)
 # a mode you'd pass directly to os.chmod.
 FILE_UPLOAD_PERMISSIONS = 0o644
 
-
 #############
 # DATABASES #
 #############
 
 DATABASES = {
-    "default": {
-        # Add "postgresql_psycopg2", "mysql", "sqlite3" or "oracle".
-        "ENGINE": "django.db.backends.",
-        # DB name or path to database file if using sqlite3.
-        "NAME": "",
-        # Not used with sqlite3.
-        "USER": "",
-        # Not used with sqlite3.
-        "PASSWORD": "",
-        # Set to empty string for localhost. Not used with sqlite3.
-        "HOST": "",
-        # Set to empty string for default. Not used with sqlite3.
-        "PORT": "",
-    }
+  "default": {
+    # Add "postgresql_psycopg2", "mysql", "sqlite3" or "oracle".
+    "ENGINE": "django.db.backends.",
+    # DB name or path to database file if using sqlite3.
+    "NAME": "",
+    # Not used with sqlite3.
+    "USER": "",
+    # Not used with sqlite3.
+    "PASSWORD": "",
+    # Set to empty string for localhost. Not used with sqlite3.
+    "HOST": "",
+    # Set to empty string for default. Not used with sqlite3.
+    "PORT": "",
+  }
 }
-
 
 #########
 # PATHS #
@@ -195,88 +190,87 @@ MEDIA_ROOT = os.path.join(PROJECT_ROOT, *MEDIA_URL.strip("/").split("/"))
 ROOT_URLCONF = "%s.urls" % PROJECT_APP
 
 TEMPLATES = [
-    {
-        "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [
-            os.path.join(PROJECT_ROOT, "theme/templates"),
-            os.path.join(PROJECT_ROOT, "templates")
-        ],
-        "APP_DIRS": True,
-        "OPTIONS": {
-            "context_processors": [
-                "django.contrib.auth.context_processors.auth",
-                "django.contrib.messages.context_processors.messages",
-                "django.template.context_processors.debug",
-                "django.template.context_processors.i18n",
-                "django.template.context_processors.static",
-                "django.template.context_processors.media",
-                "django.template.context_processors.request",
-                "django.template.context_processors.tz",
-                "mezzanine.conf.context_processors.settings",
-                "mezzanine.pages.context_processors.page",
-            ],
-            "builtins": [
-                "mezzanine.template.loader_tags",
-            ],
-        },
+  {
+    "BACKEND": "django.template.backends.django.DjangoTemplates",
+    "DIRS": [
+      os.path.join(PROJECT_ROOT, "theme/templates"),
+      os.path.join(PROJECT_ROOT, "templates")
+    ],
+    "APP_DIRS": True,
+    "OPTIONS": {
+      "context_processors": [
+        "django.contrib.auth.context_processors.auth",
+        "django.contrib.messages.context_processors.messages",
+        "django.template.context_processors.debug",
+        "django.template.context_processors.i18n",
+        "django.template.context_processors.static",
+        "django.template.context_processors.media",
+        "django.template.context_processors.request",
+        "django.template.context_processors.tz",
+        "mezzanine.conf.context_processors.settings",
+        "mezzanine.pages.context_processors.page",
+      ],
+      "builtins": [
+        "mezzanine.template.loader_tags",
+      ],
     },
+  },
 ]
 
 if DJANGO_VERSION < (1, 9):
-    del TEMPLATES[0]["OPTIONS"]["builtins"]
-
+  del TEMPLATES[0]["OPTIONS"]["builtins"]
 
 ################
 # APPLICATIONS #
 ################
 
 INSTALLED_APPS = (
-    "theme",
-    "django.contrib.admin",
-    "django.contrib.auth",
-    "django.contrib.contenttypes",
-    "django.contrib.redirects",
-    "django.contrib.sessions",
-    "django.contrib.sites",
-    "django.contrib.sitemaps",
-    "django.contrib.staticfiles",
-    "mezzanine.boot",
-    "mezzanine.conf",
-    "mezzanine.core",
-    "mezzanine.generic",
-    "mezzanine.pages",
-    "mezzanine.blog",
-    "mezzanine.forms",
-    "mezzanine.galleries",
-    "mezzanine.twitter",
-    # "mezzanine.accounts",
-    # "mezzanine.mobile",
+  "theme",
+  "django.contrib.admin",
+  "django.contrib.auth",
+  "django.contrib.contenttypes",
+  "django.contrib.redirects",
+  "django.contrib.sessions",
+  "django.contrib.sites",
+  "django.contrib.sitemaps",
+  "django.contrib.staticfiles",
+  "mezzanine.boot",
+  "mezzanine.conf",
+  "mezzanine.core",
+  "mezzanine.generic",
+  "mezzanine.pages",
+  "mezzanine.blog",
+  "mezzanine.forms",
+  "mezzanine.galleries",
+  "mezzanine.twitter",
+  # "mezzanine.accounts",
+  # "mezzanine.mobile",
 )
 
 # List of middleware classes to use. Order is important; in the request phase,
 # these middleware classes will be applied in the order given, and in the
 # response phase the middleware will be applied in reverse order.
 MIDDLEWARE_CLASSES = (
-    "mezzanine.core.middleware.UpdateCacheMiddleware",
+  "mezzanine.core.middleware.UpdateCacheMiddleware",
 
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    # Uncomment if using internationalisation or localisation
-    # 'django.middleware.locale.LocaleMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+  'django.contrib.sessions.middleware.SessionMiddleware',
+  # Uncomment if using internationalisation or localisation
+  # 'django.middleware.locale.LocaleMiddleware',
+  'django.middleware.common.CommonMiddleware',
+  'django.middleware.csrf.CsrfViewMiddleware',
+  'django.contrib.auth.middleware.AuthenticationMiddleware',
+  'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
+  'django.contrib.messages.middleware.MessageMiddleware',
+  'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
-    "mezzanine.core.request.CurrentRequestMiddleware",
-    "mezzanine.core.middleware.RedirectFallbackMiddleware",
-    "mezzanine.core.middleware.TemplateForDeviceMiddleware",
-    "mezzanine.core.middleware.TemplateForHostMiddleware",
-    "mezzanine.core.middleware.AdminLoginInterfaceSelectorMiddleware",
-    "mezzanine.core.middleware.SitePermissionMiddleware",
-    "mezzanine.pages.middleware.PageMiddleware",
-    "mezzanine.core.middleware.FetchFromCacheMiddleware",
+  "mezzanine.core.request.CurrentRequestMiddleware",
+  "mezzanine.core.middleware.RedirectFallbackMiddleware",
+  "mezzanine.core.middleware.TemplateForDeviceMiddleware",
+  "mezzanine.core.middleware.TemplateForHostMiddleware",
+  "mezzanine.core.middleware.AdminLoginInterfaceSelectorMiddleware",
+  "mezzanine.core.middleware.SitePermissionMiddleware",
+  "mezzanine.pages.middleware.PageMiddleware",
+  "mezzanine.core.middleware.FetchFromCacheMiddleware",
 )
 
 # Store these package names here as they may change in the future since
@@ -290,11 +284,11 @@ PACKAGE_NAME_GRAPPELLI = "grappelli_safe"
 
 # These will be added to ``INSTALLED_APPS``, only if available.
 OPTIONAL_APPS = (
-    "debug_toolbar",
-    "django_extensions",
-    "compressor",
-    PACKAGE_NAME_FILEBROWSER,
-    PACKAGE_NAME_GRAPPELLI,
+  "debug_toolbar",
+  "django_extensions",
+  "compressor",
+  PACKAGE_NAME_FILEBROWSER,
+  PACKAGE_NAME_GRAPPELLI,
 )
 
 ##################
@@ -311,14 +305,14 @@ OPTIONAL_APPS = (
 
 f = os.path.join(PROJECT_APP_PATH, "local_settings.py")
 if os.path.exists(f):
-    import sys
-    import imp
-    module_name = "%s.local_settings" % PROJECT_APP
-    module = imp.new_module(module_name)
-    module.__file__ = f
-    sys.modules[module_name] = module
-    exec(open(f, "rb").read())
+  import sys
+  import imp
 
+  module_name = "%s.local_settings" % PROJECT_APP
+  module = imp.new_module(module_name)
+  module.__file__ = f
+  sys.modules[module_name] = module
+  exec (open(f, "rb").read())
 
 ####################
 # DYNAMIC SETTINGS #
@@ -331,12 +325,20 @@ if os.path.exists(f):
 # fabfile, where setting the dynamic settings below isn't strictly
 # required.
 try:
-    from mezzanine.utils.conf import set_dynamic_settings
+  from mezzanine.utils.conf import set_dynamic_settings
 except ImportError:
-    pass
+  pass
 else:
-    set_dynamic_settings(globals())
-
+  set_dynamic_settings(globals())
 
 BLOG_USE_FEATURED_IMAGE = True
 SITE_TITLE = "PyCon Pakistan 2017"
+
+RICHTEXT_ALLOWED_ATTRIBUTES = (
+'abbr', 'accept', 'accept-charset', 'accesskey', 'action', 'align', 'alt', 'axis', 'border', 'cellpadding',
+'cellspacing', 'char', 'charoff', 'charset', 'checked', 'cite', 'class', 'clear', 'cols', 'colspan', 'color', 'compact',
+'coords', 'datetime', 'dir', 'disabled', 'enctype', 'for', 'frame', 'headers', 'height', 'href', 'hreflang', 'hspace',
+'id', 'ismap', 'label', 'lang', 'longdesc', 'maxlength', 'media', 'method', 'multiple', 'name', 'nohref', 'noshade',
+'nowrap', 'prompt', 'readonly', 'rel', 'rev', 'rows', 'rowspan', 'rules', 'scope', 'selected', 'shape', 'size', 'span',
+'src', 'start', 'style', 'summary', 'tabindex', 'target', 'title', 'type', 'usemap', 'valign', 'value', 'vspace',
+'width', 'xml:lang', 'data-wow-delay', 'aria-hidden', 'data-ride', 'role', 'data-slide')
