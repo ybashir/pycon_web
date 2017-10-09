@@ -1,3 +1,18 @@
-from django.shortcuts import render
+from django.views import generic
+from theme.models import Gallery
 
-# Create your views here.
+
+class GalleryIndexView(generic.ListView):
+    template_name = 'gallery/index.html'
+    context_object_name = 'galleries'
+
+    def get_queryset(self):
+        return Gallery.objects.published()
+
+
+class GalleryDetailView(generic.DetailView):
+    template_name = 'gallery/detail.html'
+    context_object_name = 'gallery'
+
+    def get_queryset(self):
+        return Gallery.objects.published()

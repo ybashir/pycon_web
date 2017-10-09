@@ -1,5 +1,7 @@
 {% extends "base.html" %}
-{% load i18n mezzanine_tags blog_tags speaker_tags slides_tags %}
+
+{% load i18n mezzanine_tags blog_tags speaker_tags slides_tags gallery_tags sponsor_tags %}
+
 
 {% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Home - PyCon Pakistan" %}
 {% endif %}{% endblock %}
@@ -160,26 +162,16 @@
                         Aenean commodo ligula eget dolor. A <br/> enean massa. Cum sociis natoque penatibus et magnis
                         dis parturient montes.</p>
                 </div>
+                {% featured_sponsors 4 as sponsors %}
+                {% for sponsor in sponsors %}
                 <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="spnsors-logo wow fadeInUp"><a href="#"><img alt=""
-                                                                            src="static/media/uploads/sponsors/logo-01.png"/></a>
+                    <h2>{{ sponsor.title }}</h2>
+                    <div class="spnsors-logo wow fadeInUp"><a href="{{ sponsor.link }}">
+                        <img alt="" src="{{ MEDIA_URL }}{{ sponsor.logo }}"/>
+                    </a>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="spnsors-logo wow fadeInUp"><a href="#"><img alt=""
-                                                                            src="static/media/uploads/sponsors/logo-02.png"/></a>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="spnsors-logo wow fadeInUp"><a href="#"><img alt=""
-                                                                            src="static/media/uploads/sponsors/logo-03.png"/></a>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="spnsors-logo wow fadeInUp"><a href="#"><img alt=""
-                                                                            src="static/media/uploads/sponsors/logo-04.png"/></a>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </section>
@@ -195,63 +187,18 @@
                     parturient montes.</p>
             </div>
             <div class="gallery-wrap wow fadeInDown">
+            {% featured_gallery_images 6 as images %}
+            {% for gallery_image in images %}
                 <div class="col-md-4 col-sm-4 col-xs-12 gellery-pn">
-                    <div class="gallery-item"><a href="#"><img alt="" src="static/media/uploads/gallery/img-1.jpg"/></a>
+                    <div class="gallery-item"><a href="#"><img alt="" src="{{ MEDIA_URL }}{{ gallery_image.image }}"/></a>
                         <div class="overlay">
                             <div class="icons"><a class="preview lightbox"
-                                                  href="static/media/uploads/gallery/img-1.jpg"><i class="icon-eye"></i></a>
-                                <a class="link" href="/gallery/"><i class="icon-link"></i></a></div>
-                        </div>
-                    </div>
-                    <div class="gallery-item"><a href="#"><img alt="" src="static/media/uploads/gallery/img-2.jpg"/></a>
-                        <div class="overlay">
-                            <div class="icons"><a class="preview lightbox"
-                                                  href="static/media/uploads/gallery/img-2.jpg"><i class="icon-eye"></i></a>
-                                <a class="link" href="/gallery/"><i class="icon-link"></i></a></div>
-                        </div>
-                    </div>
-                    <div class="gallery-item"><a href="#"><img alt="" src="static/media/uploads/gallery/img-3.jpg"/></a>
-                        <div class="overlay">
-                            <div class="icons"><a class="preview lightbox"
-                                                  href="static/media/uploads/gallery/lagre-3.jpg"><i
-                                    class="icon-eye"></i></a> <a class="link" href="/gallery/"><i class="icon-link"></i></a>
-                            </div>
+                                                  href="{{ MEDIA_URL }}{{ gallery_image.image }}"><i class="icon-eye"></i></a>
+                                <a class="link" href="{{ gallery_image.gallery.get_absolute_url }}"><i class="icon-link"></i></a></div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-4 col-xs-12 gellery-pn">
-                    <div class="gallery-item"><a href="#"><img alt="" src="static/media/uploads/gallery/img-4.jpg"/></a>
-                        <div class="overlay">
-                            <div class="icons"><a class="preview lightbox"
-                                                  href="static/media/uploads/gallery/img-4.jpg"><i class="icon-eye"></i></a>
-                                <a class="link" href="/gallery/"><i class="icon-link"></i></a></div>
-                        </div>
-                    </div>
-                    <div class="gallery-item"><a href="#"><img alt="" src="static/media/uploads/gallery/img-5.jpg"/></a>
-                        <div class="overlay">
-                            <div class="icons"><a class="preview lightbox"
-                                                  href="static/media/uploads/gallery/img-5.jpg"><i class="icon-eye"></i></a>
-                                <a class="link" href="/gallery/"><i class="icon-link"></i></a></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-4 col-xs-12 gellery-pn">
-                    <div class="gallery-item"><a href="#"><img alt="" src="static/media/uploads/gallery/img-6.jpg"/></a>
-                        <div class="overlay">
-                            <div class="icons"><a class="preview lightbox"
-                                                  href="static/media/uploads/gallery/img-6.jpg"><i class="icon-eye"></i></a>
-                                <a class="link" href="/gallery/"><i class="icon-link"></i></a></div>
-                        </div>
-                    </div>
-                    <div class="gallery-item"><a href="#"><img alt="" src="static/media/uploads/gallery/img-7.jpg"/></a>
-                        <div class="overlay">
-                            <div class="icons"><a class="preview lightbox"
-                                                  href="static/media/uploads/gallery/img-7.jpg"><i class="icon-eye"></i></a>
-                                <a class="link" href="/gallery/"><i class="icon-link"></i></a></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="more-btn"><a class="btn btn-common wow fadeInUp" href="/gallery/">show more</a></div>
+            {% endfor %}
             </div>
         </div>
     </section>

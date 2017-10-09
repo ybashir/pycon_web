@@ -20,7 +20,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Impression | Bootstrap HTML5 Conference and Event Template</title>
+    <title>Pycon Pakistan</title>
 
 
     <!-- Bootstrap -->
@@ -46,6 +46,10 @@
 
     <!-- Color CSS Styles  -->
     <link rel="stylesheet" type="text/css" href="{% static "css/colors/green.css"%}" media="screen" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static "css/custom.css"%}">
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -94,7 +98,7 @@
           <div class="container">
             <div class="col-md-6 col-sm-6">
               <div class="info-bar-address">
-                 <i class="icon-location-pin"></i> Lahore, Pakistan
+                 <i class="icon-location-pin"></i> Pakistan
               </div>
             </div>
             <div class="col-md-6 col-sm-6">
@@ -102,7 +106,6 @@
               <div class="quick-contacts">
                   <span><a href="https://www.facebook.com/PyConPakistan/"><i class="icon-social-facebook"></i></a></span>
                   <span><a href="https://twitter.com/pyconpk"><i class="icon-social-twitter"></i></a></span>
-                  <span><i class="icon-phone"></i> (00) 123 456 789</span>
                   <span><i class="icon-envelope"></i><a href="mailto:info@pycon.pk">info@pycon.pk</a></span>
               </div>
               <!-- Quick Contacts End -->
@@ -207,26 +210,21 @@
             <h3>Support</h3>
             <ul>
               <li><a href="#">Support</a></li>
-              <li><a href="#">Docs</a></li>
               <li><a href="#">Contact Us</a></li>
             </ul>
           </div>
           <div class="col-md-3 col-sm-3 col-xs-12">
             <h3>Learn More</h3>
             <ul>
-              <li><a href="#">How it Works</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Log In</a></li>
-              <li><a href="#">Sign Up</a></li>
+              <li><a href="/blog">Blog</a></li>
             </ul>
           </div>
           <div class="col-md-3 col-sm-3 col-xs-12">
             <h3>Quick Link</h3>
             <ul>
               <li><a href="#">Schedule</a></li>
-              <li><a href="#">Gallery</a></li>
-              <li><a href="#">Team</a></li>
-              <li><a href="#">Blog</a></li>
+              <li><a href="/gallery">Gallery</a></li>
+              <li><a href="/blog">Blog</a></li>
               <li><a href="#">Pricing</a></li>
             </ul>
           </div>
