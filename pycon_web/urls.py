@@ -56,6 +56,9 @@ urlpatterns += [
 
     #url("^$", mezzanine.pages.views.page, {"slug": "/"}, name="home"),
 
+    # custom urls
+    url('^', include("theme.urls")),
+
     # HOMEPAGE FOR A BLOG-ONLY SITE
     # -----------------------------
     # This pattern points the homepage to the blog post listing page,

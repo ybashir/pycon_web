@@ -1,0 +1,9 @@
+
+#content img {
+  height: auto;
+}
+
+.gallery-item {
+  max-height: 180px;
+  overflow: hidden;
+}

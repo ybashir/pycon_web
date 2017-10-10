@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load i18n mezzanine_tags blog_tags %}
+
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Gallery - PyCon Pakistan" %}
+{% endif %}{% endblock %}
+
+{% block breadcrumbs %}
+{% endblock %}
+{% block main %}
+
+    <p></p>
+    <!-- Gallery Section Start -->
+    <section class="section" id="gallery">
+        <div class="container">
+            <div class="col-md-12">
+                <h2 class="section-title wow fadeInUp">Our Gallery</h2>
+            </div>
+            <div class="gallery-wrap wow fadeInDown">
+                {% for gallery in galleries %}
+
+                <div class="col-md-4 col-sm-4 col-xs-12 gellery-pn">
+                    <h2>{{ gallery.title }}</h2>
+                    <div class="gallery-item"><a href="#"><img alt="" src="{{ MEDIA_URL }}{{ gallery.thumbnail }}"/></a>
+                        <div class="overlay">
+                            <div class="icons">
+                                <a class="preview lightbox" href="{{ MEDIA_URL }}{{ gallery.thumbnail }}">
+                                    <i class="icon-eye"></i>
+                                </a>
+                                <a class="link" href="{{ gallery.get_absolute_url }}">
+                                    <i class="icon-link"></i>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!-- Gallery Section End -->
+{% endblock %}
