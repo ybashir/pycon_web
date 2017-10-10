@@ -22,6 +22,7 @@
             <div class="container">
                 {% errors_for form %}
             </div>
+            {% list_iterator form as fields %}
             <form class="mezzanine-form" method="post"{% if form.is_multipart %}
                   enctype="multipart/form-data"{% endif %}>
                 {% nevercache %}
@@ -46,10 +47,10 @@
                                 <div class="col-sm-4 col-xs-12">
                                     <div class="select-tickets">
                                         <div>
-                                            <h4>Student Pass</h4>
+                                            <h4>{{ fields.0.label }}</h4>
                                             <span>$5.00</span>
                                         </div>
-                                        {{ form.field_1 }}
+                                        {{ fields.0 }}
                                     </div>
                                 </div>
                                 <div class="col-sm-4 col-xs-12">
@@ -58,7 +59,7 @@
                                             <h4>Professional Pass</h4>
                                             <span>$15.00</span>
                                         </div>
-                                        {{ form.field_2 }}
+                                        {{ fields.1 }}
                                     </div>
                                 </div>
                                 <div class="col-sm-4 col-xs-12">
@@ -67,7 +68,7 @@
                                             <h4>Speaker Pass</h4>
                                             <span>Free</span>
                                         </div>
-                                        {{ form.field_3 }}
+                                        {{ fields.2 }}
                                     </div>
                                 </div>
                             </div>
@@ -81,18 +82,18 @@
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <h4>Your Information</h4>
-                                        {% render_field form.field_4 %}
-                                        {% render_field form.field_5 %}
-                                        {% render_field form.field_6 %}
-                                        {% render_field form.field_7 %}
-                                        {% render_field form.field_8 %}
+                                        {% render_field fields.3 %}
+                                        {% render_field fields.4 %}
+                                        {% render_field fields.5 %}
+                                        {% render_field fields.6 %}
+                                        {% render_field fields.7 %}
                                     </div>
                                     <div class="col-sm-6">
                                         <h4 class="custom-margin">Work Information</h4>
-                                        {% render_field form.field_9 %}
+                                        {% render_field fields.8 %}
                                         <h4>Other Information</h4>
-                                        {% render_field form.field_10 %}
-                                        {% render_field form.field_14 %}
+                                        {% render_field fields.9 %}
+                                        {% render_field fields.10 %}
                                     </div>
                                 </div>
                             </div>

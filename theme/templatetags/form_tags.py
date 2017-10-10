@@ -11,3 +11,8 @@ def render_field(context, field, template="generic/form_field.html"):
     """
     context["field"] = field
     return get_template(template).render(context)
+
+
+@register.simple_tag
+def list_iterator(form):
+    return list(form)

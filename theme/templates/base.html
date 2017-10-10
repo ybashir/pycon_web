@@ -8,7 +8,7 @@
 <meta name="keywords" content="{% block meta_keywords %}{% endblock %}">
 <meta name="description" content="{% block meta_description %}{% endblock %}">
 <title>{% block meta_title %}{% endblock %}{% if settings.SITE_TITLE %} | {{ settings.SITE_TITLE }}{% endif %}</title>
-<link rel="shortcut icon" href="{% static "img/favicon.ico" %}">
+<link rel="shortcut icon" href="{% static "img/favicon.png" %}">
 
 {% ifinstalled mezzanine.blog %}
 <link rel="alternate" type="application/rss+xml" title="RSS" href="{% url "blog_post_feed" "rss" %}">
@@ -116,7 +116,7 @@
 
       <!-- Nav Menu Section Start -->
       <div class="navigation-menu">
-        <nav class="navbar navbar-default navbar-event" >
+        <nav class="navbar navbar-default navbar-event" role="navigation" data-spy="affix" data-offset-top="20">
           <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header col-md-2">
@@ -209,23 +209,23 @@
           <div class="col-md-3 col-sm-3 col-xs-12">
             <h3>Support</h3>
             <ul>
-              <li><a href="#">Support</a></li>
-              <li><a href="#">Contact Us</a></li>
+              <li><a href="/contact-us">Contact Us</a></li>
             </ul>
           </div>
           <div class="col-md-3 col-sm-3 col-xs-12">
             <h3>Learn More</h3>
             <ul>
               <li><a href="/blog">Blog</a></li>
+              <li><a href="/about">How it works</a></li>
             </ul>
           </div>
           <div class="col-md-3 col-sm-3 col-xs-12">
             <h3>Quick Link</h3>
             <ul>
-              <li><a href="#">Schedule</a></li>
+              <li><a href="/schedule">Schedule</a></li>
               <li><a href="/gallery">Gallery</a></li>
-              <li><a href="/blog">Blog</a></li>
-              <li><a href="#">Pricing</a></li>
+              <li><a href="/sponsors">Sponsors</a></li>
+              <li><a href="/buy-tickets">Tickets</a></li>
             </ul>
           </div>
         </div>

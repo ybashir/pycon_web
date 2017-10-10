@@ -7,6 +7,15 @@
     overflow: hidden;
 }
 
+/* Style for social icon on contact-us*/
+#contact .social a .fa-facebook:hover {
+  color: #3b5998;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
 /*Styles for registration form*/
 
 .form-widget {
