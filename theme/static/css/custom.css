@@ -1,9 +1,98 @@
-
 #content img {
-  height: auto;
+    height: auto;
 }
 
 .gallery-item {
-  max-height: 180px;
-  overflow: hidden;
+    max-height: 180px;
+    overflow: hidden;
+}
+
+/*Styles for registration form*/
+
+.form-widget {
+    border: 1px solid #f1f1f1;
+    overflow: hidden;
+    margin: 0 0 50px;
+}
+
+.form-widget h3 {
+    margin: 0;
+    font-size: 22px;
+    background: #f1f1f1;
+    padding: 20px;
+    text-transform: capitalize;
+}
+
+.select-ticket-widget {
+    padding: 30px;
+}
+
+.select-tickets {
+    padding: 20px;
+    border: 1px solid #f1f1f1;
+    background: #f4f4f4;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.select-tickets div {
+    float: left;
+}
+
+.select-tickets div h4 {
+    margin: 0 0 5px;
+    text-transform: capitalize;
+}
+
+.select-tickets select {
+    width: 100px;
+    float: right;
+    height: 40px;
+    padding: 0 10px;
+    border: 1px solid #ccc !important;
+    background: transparent url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png") no-repeat 70px 10px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.order-summary {
+    padding: 30px;
+}
+
+.order-summary table {
+    width: 100%;
+}
+
+.order-summary table thead th {
+    padding: 0 0 10px;
+    font-size: 14px;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+.registration-information {
+    padding: 30px;
+}
+
+.registration-information h4 {
+    margin: 0 0 30px;
+    font-weight: 600;
+}
+
+.registration-information form {
+    margin: 0 0 30px;
+}
+
+.registration-information form .form-control {
+    height: 40px;
+    border-radius: 0;
+}
+
+.registration-information form .form-group label {
+    font-weight: normal;
+    margin: 0 0 10px;
+}
+
+.custom-margin {
+    margin: 50px 0 30px;
 }
