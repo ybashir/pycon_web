@@ -342,3 +342,5 @@ RICHTEXT_ALLOWED_ATTRIBUTES = (
 'nowrap', 'prompt', 'readonly', 'rel', 'rev', 'rows', 'rowspan', 'rules', 'scope', 'selected', 'shape', 'size', 'span',
 'src', 'start', 'style', 'summary', 'tabindex', 'target', 'title', 'type', 'usemap', 'valign', 'value', 'vspace',
 'width', 'xml:lang', 'data-wow-delay', 'aria-hidden', 'data-ride', 'role', 'data-slide')
+
+SEARCH_MODEL_CHOICES = ('blog.BlogPost', )

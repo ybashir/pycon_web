@@ -1,0 +1,8 @@
+{% load mezzanine_tags i18n %}
+<div class="widget widget-search">
+    <form action="{% url "search" %}" role="search">
+        <input class="form-control" type="search" placeholder="Start Searching..." name="q"
+               value="{{ request.GET.q }}"/>
+        <button class="search-btn" type="submit"><i class="fa fa-search"></i></button>
+    </form>
+</div>
