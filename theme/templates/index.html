@@ -41,8 +41,8 @@
                 <div class="col-md-6 col-sm-6 col-xs-12 wow fadeInLeft">
                     <div class="text">
                         <h2>PyCon <br/>Pakistan</h2>
-                        <h4>FAST Campus, Lahore <br/> Dec 16, 2017 - Dec 17, 2017</h4>
-                        <a class="btn btn-lg btn-common" href="pricing.html">Buy Tickets</a></div>
+                        <h4>FAST Campus, Lahore <br/> Dec 16, 2017</h4>
+                        <a class="btn btn-lg btn-common" href="/buy-tickets">Buy Tickets</a></div>
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-12 wow fadeInRight">
                     <div class="time-countdown">
@@ -62,8 +62,8 @@
                     <div class="tab-block wow fadeInDown">
                         <div class="icon"><i class="icon-location-pin"></i></div>
                         <div class="desc">
-                            <h4>Location</h4>
-                            <p>Marriott Marquis, San Francisco</p>
+                            <h4><a href="/contact-us">Location</a></h4>
+                            <p>FAST Campus, Lahore</p>
                         </div>
                     </div>
                 </div>
@@ -71,8 +71,8 @@
                     <div class="tab-block wow fadeInDown">
                         <div class="icon"><i class="icon-calendar"></i></div>
                         <div class="desc">
-                            <h4>Date &amp; Time</h4>
-                            <p>1PM - 11PM, 25- 28 Jan</p>
+                            <h4><a href="/schedule">Date &amp; Time</a></h4>
+                            <p>10AM - 8PM, Dec 16, 2017</p>
                         </div>
                     </div>
                 </div>
@@ -80,8 +80,8 @@
                     <div class="tab-block wow fadeInDown">
                         <div class="icon"><i class="icon-microphone"></i></div>
                         <div class="desc">
-                            <h4>Speakers</h4>
-                            <p>10 Tech Icons and Professionals</p>
+                            <h4><a href="/speakers">Speakers</a></h4>
+                            <p>{% speaker_count as speaker_count %}{{ speaker_count }} Tech Icons and Professionals</p>
                         </div>
                     </div>
                 </div>
@@ -89,17 +89,15 @@
                     <div class="tab-block last-block wow fadeInDown">
                         <div class="icon"><i class="icon-wallet"></i></div>
                         <div class="desc left">
-                            <h4>Tickets</h4>
-                            <p>150 People</p>
+                            <h4><a href="/buy-tickets">Tickets</a></h4>
+                            <p>{% passes_booked_except_speakers as passes %}{{ passes }} People</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-12">
                     <div class="content-text">
-                        <h3 class="wow fadeInUp">Get fresh insights into the world of tech and startups</h3>
-                        <p class="wow fadeInUp">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-                            ligula eget dolor. A enean massa. Cum sociis natoque penatibus et magnis dis parturient
-                            montes Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                        <h3 class="wow fadeInUp">Be a part of PyCon Pakistan</h3>
+                        <p class="wow fadeInUp">Pakistan’s first-ever PyCon connects local programmers, Python developers, students, and IT companies with the local and international Python community.</p>
                     </div>
                 </div>
             </div>
@@ -158,9 +156,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <h2 class="section-title wow fadeInUp">Our Sponsors</h2>
-                    <p class="section-subcontent wow fadeInUp">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                        Aenean commodo ligula eget dolor. A <br/> enean massa. Cum sociis natoque penatibus et magnis
-                        dis parturient montes.</p>
+                    <p class="section-subcontent wow fadeInUp">Sponsors are what will make this conference possible.</p>
                 </div>
                 {% featured_sponsors 4 as sponsors %}
                 {% for sponsor in sponsors %}
@@ -172,7 +168,14 @@
                     </div>
                 </div>
                 {% endfor %}
+
             </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3>What to contribute?</h3>
+                <p>If you have any questions about sponsoring PyCon, <a href="/contact-us">contact us</a></p>
+            </div>
+        </div>
         </div>
     </section>
     <!-- Sponsors Section End -->
@@ -182,9 +185,7 @@
         <div class="container">
             <div class="col-md-12">
                 <h2 class="section-title wow fadeInUp">Our Gallery</h2>
-                <p class="section-subcontent wow fadeInUp">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                    Aenean commodo ligula eget dolor. A <br/> enean massa. Cum sociis natoque penatibus et magnis dis
-                    parturient montes.</p>
+                <p class="section-subcontent wow fadeInUp">Our journey so far towards the events</p>
             </div>
             <div class="gallery-wrap wow fadeInDown">
             {% featured_gallery_images 6 as images %}
@@ -249,9 +250,14 @@
                     </div>
                 </div>
                 {% endfor %}
-                <div class="more-btn text-center"><a class="btn btn-common wow fadeInUp" href="">show
-                    more</a></div>
             </div>
+        {% if speaker_count > 3 %}
+        <div class="row">
+            <div class="col-md-12">
+                <div class="more-btn text-center"><a class="btn btn-common wow fadeInUp" href="">show more</a></div>
+            </div>
+        </div>
+        {% endif %}
         </div>
     </section>
     <!-- Speakers Section End -->
@@ -279,7 +285,7 @@
                                     <i class="icon-calendar"></i> {{ post.publish_date }}
                                 </span>
                             </div>
-                            {{ post.content|truncatechars_html:100|richtext_filters|safe }}
+                            {{ post.description_from_content|truncatewords_html:20|richtext_filters|safe }}
                         </div>
                     </div>
                 </div>

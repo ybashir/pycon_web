@@ -1,0 +1,116 @@
+{% extends "pages/page.html" %}
+
+{% load i18n mezzanine_tags form_tags %}
+
+{% block left_wrapper %}
+{% endblock %}
+{% block breadcrumbs %}
+{% endblock %}
+<div class="col-md-{% block main_col_size %}8{% endblock %}">
+    {% block main %}
+        {{ block.super }}
+        {% if request.GET.sent %}
+            {% editable page.form.response %}
+                {{ page.form.response|richtext_filters|safe }}
+            {% endeditable %}
+        {% else %}
+            {% with page.form as page_form %}
+                {% editable page_form.content %}
+                    {{ page_form.content|richtext_filters|safe }}
+                {% endeditable %}
+            {% endwith %}
+            <div class="container">
+                {% errors_for form %}
+            </div>
+            {% list_iterator form as fields %}
+            <!-- Main contetn Start -->
+            <div class="main-content">
+                <!-- Start Contact Us Section -->
+                <section id="contact">
+                    <div class="container">
+                        <div class="row wow fadeInDown" data-wow-delay="0.3s">
+                            <div class="col-md-8 col-sm-7 contact-form">
+                                <form method="post"{% if form.is_multipart %}
+                                      enctype="multipart/form-data"{% endif %}>
+                                    {% nevercache %}
+                                        <input type="hidden" name="referrer" value="{{ request.META.HTTP_REFERER }}">
+                                        {% csrf_token %}
+                                    {% endnevercache %}
+
+                                    {% for field in form %}
+                                        {% if field.is_hidden %}
+                                            {{ field }}
+                                        {% endif %}
+                                    {% endfor %}
+                                    <div class="title-header">
+                                        <h3 class="title-medium pull-left">Send us a message</h3>
+                                        <div class="icon pull-right"><i class="icon-envelope"></i></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="label-line">
+                                                <span class="span"></span>
+                                                <label class="label transition">{{ fields.0.label }}</label>
+                                                {{ fields.0 }}
+                                                <div class="help-block with-errors"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="label-line">
+                                                <span class="span"></span>
+                                                <label class="label transition">{{ fields.1.label }}</label>
+                                                {{ fields.1 }}
+                                                <div class="help-block with-errors"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="label-line textarea">
+                                                <span class="span"></span>
+                                                <label class="label transition">{{ fields.2.label }}</label>
+                                                {{ fields.2 }}
+                                                <div class="help-block with-errors"></div>
+                                            </div>
+                                            <button type="submit" class="btn btn-common">Send <i
+                                                    class="icon-paper-plane" aria-hidden="true"></i></button>
+
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-md-4 col-sm-5 information">
+                                <div class="title-header">
+                                    <h3 class="title-medium">Contact Information</h3>
+                                </div>
+                                <div class="contact-datails">
+                                    <div class="icon">
+                                        <i class="fa fa-map-marker"></i>
+                                    </div>
+                                    <div class="info">
+                                        <span class="detail">FAST Campus, Lahore<br> Pakistan</span>
+                                    </div>
+                                </div>
+                                <div class="contact-datails">
+                                    <div class="icon">
+                                        <i class="fa fa-envelope"></i>
+                                    </div>
+                                    <div class="info">
+                                        <span class="detail">info@pycon.pk</span>
+                                    </div>
+                                </div>
+                                <div class="social text-center">
+                                    <a class="social" href="https://twitter.com/pyconpk" target="_blank"><i
+                                            class="fa fa-twitter"></i></a>
+                                    <a class="social" href="https://www.facebook.com/PyConPakistan/" target="_blank"><i
+                                            class="fa fa-facebook"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- End Contact Us Section  -->
+            </div>
+            <!-- Main content End -->
+        {% endif %}
+
+    {% endblock %}
+</div>
