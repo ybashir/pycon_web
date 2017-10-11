@@ -18,13 +18,11 @@
                 {% if results.paginator.count == 0 %}
                     <p>
                     {% blocktrans %}
-                        No results were found in {{ search_type }} matching your query: {{ query }}
+                        No results were found matching: {{ query }}
                     {% endblocktrans %}
                 {% else %}
                     {% blocktrans with start=results.start_index end=results.end_index total=results.paginator.count %}
-                        Showing {{ start }} to {{ end }} of {{ total }} results in {{ search_type }} matching your
-                        query:
-                        {{ query }}
+                        Showing {{ total }} result(s) matching: {{ query }}
                     {% endblocktrans %}
                 {% endif %}
                 </p>

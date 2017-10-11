@@ -111,16 +111,13 @@
             <div class="row">
                 <div class="col-md-12">
                     <h2 class="section-title wow fadeInUp">Why Join</h2>
-                    <p class="section-subcontent wow fadeInUp">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                        Aenean commodo ligula eget dolor. A <br/> enean massa. Cum sociis natoque penatibus et magnis
-                        dis parturient montes.</p>
+                    <p class="section-subcontent wow fadeInUp">Python is the world’s fastest growing language according to IEEE Spectrum<br/> and is poised to shape some of the next big revolutions in technology</p>
                     <div class="col-md-4 col-sm-6">
                         <div class="featured-box wow fadeInLeft">
                             <div class="icon"><i class="icon-energy"></i></div>
                             <div class="featured-content">
-                                <h4>Get Inspired</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget
-                                    dolor. Aenean massa. Cum sociis natoque</p>
+                                <h4>Explore Python</h4>
+                                <p>increasing participants’ exposure to Python</p>
                             </div>
                         </div>
                     </div>
@@ -128,9 +125,8 @@
                         <div class="featured-box wow fadeInLeft">
                             <div class="icon"><i class="icon-people"></i></div>
                             <div class="featured-content">
-                                <h4>Meet New Faces</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget
-                                    dolor. Aenean massa. Cum sociis natoque</p>
+                                <h4>Make an impact</h4>
+                                <p>a platform to discuss how technology can be used for greater social impact</p>
                             </div>
                         </div>
                     </div>
@@ -138,9 +134,8 @@
                         <div class="featured-box wow fadeInLeft">
                             <div class="icon"><i class="icon-graph"></i></div>
                             <div class="featured-content">
-                                <h4>Fresh Tech Insights</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget
-                                    dolor. Aenean massa. Cum sociis natoque</p>
+                                <h4>Meet the experts</h4>
+                                <p>a great opportunity to meet with and learn from engaging speakers, technologists and entrepreneurs</p>
                             </div>
                         </div>
                     </div>
@@ -161,7 +156,6 @@
                 {% featured_sponsors 4 as sponsors %}
                 {% for sponsor in sponsors %}
                 <div class="col-md-3 col-sm-6 col-xs-12">
-                    <h2>{{ sponsor.title }}</h2>
                     <div class="spnsors-logo wow fadeInUp"><a href="{{ sponsor.link }}">
                         <img alt="" src="{{ MEDIA_URL }}{{ sponsor.logo }}"/>
                     </a>
@@ -183,24 +177,31 @@
     <!-- Gallery Section Start -->
     <section class="section" id="gallery">
         <div class="container">
-            <div class="col-md-12">
-                <h2 class="section-title wow fadeInUp">Our Gallery</h2>
-                <p class="section-subcontent wow fadeInUp">Our journey so far towards the events</p>
-            </div>
-            <div class="gallery-wrap wow fadeInDown">
-            {% featured_gallery_images 6 as images %}
-            {% for gallery_image in images %}
-                <div class="col-md-4 col-sm-4 col-xs-12 gellery-pn">
-                    <div class="gallery-item"><a href="#"><img alt="" src="{{ MEDIA_URL }}{{ gallery_image.image }}"/></a>
-                        <div class="overlay">
-                            <div class="icons"><a class="preview lightbox"
-                                                  href="{{ MEDIA_URL }}{{ gallery_image.image }}"><i class="icon-eye"></i></a>
-                                <a class="link" href="{{ gallery_image.gallery.get_absolute_url }}"><i class="icon-link"></i></a></div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="section-title wow fadeInUp">Our Gallery</h2>
+                    <p class="section-subcontent wow fadeInUp">Our journey so far towards the events</p>
+                </div>
+                <div class="gallery-wrap wow fadeInDown">
+                {% featured_gallery_images 6 as images %}
+                {% for gallery_image in images %}
+                    <div class="col-md-4 col-sm-4 col-xs-12 gellery-pn">
+                        <div class="gallery-item"><a href="#"><img alt="" src="{{ MEDIA_URL }}{{ gallery_image.image }}"/></a>
+                            <div class="overlay">
+                                <div class="icons"><a class="preview lightbox"
+                                                      href="{{ MEDIA_URL }}{{ gallery_image.image }}"><i class="icon-eye"></i></a>
+                                    <a class="link" href="{{ gallery_image.gallery.get_absolute_url }}"><i class="icon-link"></i></a></div>
+                            </div>
                         </div>
                     </div>
+                {% endfor %}
                 </div>
-            {% endfor %}
             </div>
+            <div class="row">
+            <div class="col-md-12">
+                <div class="more-btn text-center"><a class="btn btn-common wow fadeInUp" href="/gallery">View All</a></div>
+            </div>
+        </div>
         </div>
     </section>
     <!-- Gallery Section End -->
@@ -211,9 +212,6 @@
             <div class="row">
                 <div class="col-md-12">
                     <h2 class="section-title wow fadeInUp">Meet Our Speakers</h2>
-                    <p class="section-subcontent wow fadeInUp">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                        Aenean commodo ligula eget dolor. A <br/> enean massa. Cum sociis natoque penatibus et magnis
-                        dis parturient montes.</p>
                 </div>
                 {% featured_speakers 3 as speakers %}
                 {% for speaker in speakers %}
@@ -254,7 +252,7 @@
         {% if speaker_count > 3 %}
         <div class="row">
             <div class="col-md-12">
-                <div class="more-btn text-center"><a class="btn btn-common wow fadeInUp" href="">show more</a></div>
+                <div class="more-btn text-center"><a class="btn btn-common wow fadeInUp" href="/speakers">show more</a></div>
             </div>
         </div>
         {% endif %}
@@ -268,9 +266,6 @@
             <div class="row">
                 <div class="col-md-12">
                     <h2 class="section-title wow fadeInUp">Blog</h2>
-                    <p class="section-subcontent wow fadeInUp">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                        Aenean commodo ligula eget dolor. A <br/> enean massa. Cum sociis natoque penatibus et magnis
-                        dis parturient montes.</p>
                 </div>
                 {% blog_recent_posts 3 as recent_posts %}
                 {% for post in recent_posts %}
@@ -291,6 +286,14 @@
                 </div>
                 {% endfor %}
             </div>
+        {% blog_post_count as post_count %}
+        {% if post_count > 3 %}
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="more-btn text-center"><a class="btn btn-common wow fadeInUp" href="/blog">show more</a></div>
+                </div>
+            </div>
+        {% endif %}
         </div>
     </section>
     <!-- Blog Section End -->

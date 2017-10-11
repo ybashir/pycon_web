@@ -1,6 +1,7 @@
 from theme.models import Speaker
 from django import template
-from django.db.models import Q, Sum
+from django.db.models import Q
+from mezzanine.blog.models import BlogPost
 from mezzanine.forms.models import Field, FieldEntry
 
 
@@ -32,3 +33,8 @@ def total_passes_booked():
         total_passes += int(entry.value)
 
     return total_passes
+
+
+@register.simple_tag
+def blog_post_count():
+    return BlogPost.objects.count()

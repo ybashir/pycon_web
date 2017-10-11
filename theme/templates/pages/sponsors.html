@@ -16,7 +16,6 @@
                 {% all_sponsors as sponsors %}
                 {% for sponsor in sponsors %}
                     <div class="col-md-3 col-sm-6 col-xs-12">
-                        <h2>{{ sponsor.title }}</h2>
                         <div class="spnsors-logo wow fadeInUp"><a href="{{ sponsor.link }}">
                             <img alt="" src="{{ MEDIA_URL }}{{ sponsor.logo }}"/>
                         </a>
