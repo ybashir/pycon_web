@@ -112,10 +112,6 @@
   width: 100%;
 }
 
-.carousel-inner .item{
-  position: relative;
-}
-
 .carousel-inner .item:after{
     content: "";
     position: absolute;
