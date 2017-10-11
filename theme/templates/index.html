@@ -90,7 +90,7 @@
                         <div class="icon"><i class="icon-wallet"></i></div>
                         <div class="desc left">
                             <h4><a href="/buy-tickets">Tickets</a></h4>
-                            <p>{% passes_booked_except_speakers as passes %}{{ passes }} People</p>
+                            <p>{% total_passes_booked as passes %}{{ passes }} People</p>
                         </div>
                     </div>
                 </div>
