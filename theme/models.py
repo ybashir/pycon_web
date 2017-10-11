@@ -36,6 +36,7 @@ class HomePageSlide(Displayable, RichText):
 
 
 class Gallery(Displayable):
+    gallery_description = models.TextField(null=True, blank=True)
     thumbnail = FileField(verbose_name=_("Thumbnail"), upload_to=upload_to("", "gallery_thumbs"),
                           format="Image", max_length=255)
 
