@@ -154,7 +154,7 @@
                     <p class="section-subcontent wow fadeInUp">Sponsors are what will make this conference possible.</p>
                 </div>
                 {% featured_sponsors 4 as sponsors %}
-                {% for sponsor in sponsors %}
+                {% for sponsor in sponsors reversed%}
                     {% include 'generic/sponsor.html' with sponsor=sponsor MEDIA_URL=MEDIA_URL only %}
                 {% endfor %}
 
@@ -201,7 +201,7 @@
                     <h2 class="section-title wow fadeInUp">Meet Our Speakers</h2>
                 </div>
                 {% featured_speakers 6 as speakers %}
-                {% for speaker in speakers %}
+                {% for speaker in speakers reversed%}
                     {% include 'generic/speaker.html' with speaker=speaker MEDIA_URL=MEDIA_URL only %}
                 {% endfor %}
             </div>

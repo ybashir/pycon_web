@@ -16,7 +16,7 @@
 
                 </div>
                 {% all_speakers as speakers %}
-                {% for speaker in speakers %}
+                {% for speaker in speakers reversed %}
                     {% include 'generic/speaker.html' with speaker=speaker MEDIA_URL=MEDIA_URL only %}
                 {% endfor %}
             </div>
