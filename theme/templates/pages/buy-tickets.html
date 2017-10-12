@@ -23,8 +23,8 @@
                 {% errors_for form %}
             </div>
             {% list_iterator form as fields %}
-            <form class="mezzanine-form" method="post"{% if form.is_multipart %}
-                  enctype="multipart/form-data"{% endif %}>
+            <form class="mezzanine-form" method="post" onsubmit="return validate_form();"
+                    {% if form.is_multipart %}enctype="multipart/form-data"{% endif %}>
                 {% nevercache %}
                     <input type="hidden" name="referrer" value="{{ request.META.HTTP_REFERER }}">
                     {% csrf_token %}
@@ -85,20 +85,27 @@
                                         {% render_field fields.3 %}
                                         {% render_field fields.4 %}
                                         {% render_field fields.5 %}
+                                        <div class="form-group">
+                                            <label class="control-label" for="id_field_7">Confirm Email:*</label>
+                                            <input id="id_field_7" type="email" required>
+                                        </div>
                                         {% render_field fields.6 %}
-                                        {% render_field fields.7 %}
                                     </div>
                                     <div class="col-sm-6">
                                         <h4 class="custom-margin">Work Information</h4>
-                                        {% render_field fields.8 %}
+                                        {% render_field fields.7 %}
                                         <h4>Other Information</h4>
+                                        {% render_field fields.8 %}
                                         {% render_field fields.9 %}
-                                        {% render_field fields.10 %}
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- Select Tickets -->
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="alert alert-danger hidden" id="validation-errors"></div>
+                            </div>
+                        </div>
                         <input class="btn btn-common wow" type="submit" value="{{ page.form.button_text }}">
                     </div>
                 </div>

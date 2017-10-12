@@ -14,7 +14,7 @@
         <div class="container">
             <div class="col-md-12">
                 <h2 class="section-title wow fadeInUp">{{ gallery.title }}</h2>
-                <p class="section-subcontent wow fadeInUp animated">{{ gallery.description }}</p>
+                <p class="section-subcontent wow fadeInUp animated">{{ gallery.gallery_description }}</p>
             </div>
             <div class="gallery-wrap wow fadeInDown">
                 {% for gallery_image in gallery.galleryimage_set.all %}
