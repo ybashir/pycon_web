@@ -17,38 +17,7 @@
                 </div>
                 {% all_speakers as speakers %}
                 {% for speaker in speakers %}
-                    <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="speakers-member wow fadeIn">
-                            <div class="member-img"><img alt="" src="{{ MEDIA_URL }}{{ speaker.profile_image }}"/></div>
-                            <div class="member-desc">
-                                <h3>{{ speaker.title }}</h3>
-                                <h5>{{ speaker.designation }}, {{ speaker.organization }}</h5>
-                                <p>{{ speaker.bio|truncatechars_html:100|richtext_filters|safe }}</p>
-                                <div class="social-icon">
-                                    {% if speaker.facebook_link %}
-                                        <a class="social" href="{{ speaker.facebook_link }}" target="_blank">
-                                            <i class="fa fa-facebook"></i>
-                                        </a>
-                                    {% endif %}
-                                    {% if speaker.twitter_link %}
-                                        <a class="social" href="{{ speaker.twitter_link }}" target="_blank">
-                                            <i class="fa fa-twitter"></i>
-                                        </a>
-                                    {% endif %}
-                                    {% if speaker.linked_in_link %}
-                                        <a class="social" href="{{ speaker.linked_in_link }}" target="_blank">
-                                            <i class="fa fa-linkedin"></i>
-                                        </a>
-                                    {% endif %}
-                                    {% if speaker.dribble_link %}
-                                        <a class="social" href="{{ speaker.dribble_link }}" target="_blank">
-                                            <i class="fa fa-dribbble"></i>
-                                        </a>
-                                    {% endif %}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    {% include 'generic/speaker.html' with speaker=speaker MEDIA_URL=MEDIA_URL only %}
                 {% endfor %}
             </div>
         </div>
