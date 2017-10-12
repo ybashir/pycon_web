@@ -20,7 +20,7 @@
                     <div class="carousel-caption">
                         <h2 class="wow fadeInRight" data-wow-delay="300ms">{{ slide.title }}<br/>
                         {{ slide.sub_text }}</h2>
-                        {{ slide.links|safe }}
+                        <div>{{ slide.links|safe }}</div>
                         <div class="rev-scroll-btn wow fadeInUp" data-wow-delay="600ms"><span></span></div>
                     </div>
                 </div>
@@ -40,7 +40,7 @@
             <div class="row">
                 <div class="col-md-6 col-sm-6 col-xs-12 wow fadeInLeft">
                     <div class="text">
-                        <h2>PyCon <br/>Pakistan</h2>
+                        <h2>PyCon Pakistan</h2>
                         <h4>FAST Campus, Lahore <br/> Dec 16, 2017</h4>
                         <a class="btn btn-lg btn-common" href="/buy-tickets">Buy Tickets</a></div>
                 </div>
@@ -114,7 +114,7 @@
                     <p class="section-subcontent wow fadeInUp">Python is the world’s fastest growing language according to IEEE Spectrum<br/> and is poised to shape some of the next big revolutions in technology</p>
                     <div class="col-md-4 col-sm-6">
                         <div class="featured-box wow fadeInLeft">
-                            <div class="icon"><i class="icon-energy"></i></div>
+                            <div class="icon"><i class="icon-grid"></i></div>
                             <div class="featured-content">
                                 <h4>Explore Python</h4>
                                 <p>increasing participants’ exposure to Python</p>
@@ -123,7 +123,7 @@
                     </div>
                     <div class="col-md-4 col-sm-6">
                         <div class="featured-box wow fadeInLeft">
-                            <div class="icon"><i class="icon-people"></i></div>
+                            <div class="icon"><i class="icon-feed"></i></div>
                             <div class="featured-content">
                                 <h4>Make an impact</h4>
                                 <p>a platform to discuss how technology can be used for greater social impact</p>
@@ -132,7 +132,7 @@
                     </div>
                     <div class="col-md-4 col-sm-6">
                         <div class="featured-box wow fadeInLeft">
-                            <div class="icon"><i class="icon-graph"></i></div>
+                            <div class="icon"><i class="icon-people"></i></div>
                             <div class="featured-content">
                                 <h4>Meet the experts</h4>
                                 <p>a great opportunity to meet with and learn from engaging speakers, technologists and entrepreneurs</p>
@@ -280,7 +280,7 @@
                                     <i class="icon-calendar"></i> {{ post.publish_date }}
                                 </span>
                             </div>
-                            {{ post.description_from_content|truncatewords_html:20|richtext_filters|safe }}
+                            {{ post.description_from_content|truncatewords_html:18|richtext_filters|safe }}
                         </div>
                     </div>
                 </div>

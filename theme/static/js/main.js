@@ -86,7 +86,7 @@
     slideSpeed : 400,
     stopOnHover: true,
     autoPlay: 3000,
-    items :1,
+    items :1
   });
 /* ==========================================================================
    Slick Nav 
