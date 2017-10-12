@@ -213,7 +213,7 @@
                 <div class="col-md-12">
                     <h2 class="section-title wow fadeInUp">Meet Our Speakers</h2>
                 </div>
-                {% featured_speakers 3 as speakers %}
+                {% featured_speakers 6 as speakers %}
                 {% for speaker in speakers %}
                 <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="speakers-member wow fadeIn">
@@ -221,7 +221,7 @@
                         <div class="member-desc">
                             <h3>{{ speaker.title }}</h3>
                             <h5>{{ speaker.designation }}, {{ speaker.organization }}</h5>
-                            {{ speaker.bio|truncatechars_html:100|richtext_filters|safe }}
+                            <p>{{ speaker.bio|truncatechars_html:100|richtext_filters|safe }}</p>
                             <div class="social-icon">
                             {% if speaker.facebook_link %}
                                 <a class="social" href="{{ speaker.facebook_link }}" target="_blank">
@@ -249,7 +249,7 @@
                 </div>
                 {% endfor %}
             </div>
-        {% if speaker_count > 3 %}
+        {% if speaker_count > 6 %}
         <div class="row">
             <div class="col-md-12">
                 <div class="more-btn text-center"><a class="btn btn-common wow fadeInUp" href="/speakers">show more</a></div>

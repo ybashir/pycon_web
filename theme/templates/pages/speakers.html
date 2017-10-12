@@ -23,7 +23,7 @@
                             <div class="member-desc">
                                 <h3>{{ speaker.title }}</h3>
                                 <h5>{{ speaker.designation }}, {{ speaker.organization }}</h5>
-                                {{ speaker.bio|truncatechars_html:100|richtext_filters|safe }}
+                                <p>{{ speaker.bio|truncatechars_html:100|richtext_filters|safe }}</p>
                                 <div class="social-icon">
                                     {% if speaker.facebook_link %}
                                         <a class="social" href="{{ speaker.facebook_link }}" target="_blank">
