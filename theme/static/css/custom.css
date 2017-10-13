@@ -31,6 +31,9 @@ speakers-member{
 .blog-image{
     height: 300px;
 }
+.blog-info{
+    height: 200px;
+}
 #speakers .speakers-member:hover .member-img img{
     margin-top: 0;
     -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
