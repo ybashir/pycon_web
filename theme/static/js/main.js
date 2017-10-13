@@ -51,7 +51,7 @@
 	    }
 	});
 
-	$('.label-line').click(function(){
+	$('.label-line').focusin(function(){
 		$(this).addClass('active');
 		if ($('.label-line').hasClass('checked')){}
 		else{
