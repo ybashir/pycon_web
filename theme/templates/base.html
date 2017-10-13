@@ -146,37 +146,6 @@
     </header>
     <!-- Header Area wrapper End -->
 
-{% block breadcrumbs %}
-            <!-- Page Header Start -->
-    <div class="page-header">
-      <div class="container">
-        <div class="page-header-inner">
-          <ol class="breadcrumb wow fadeInDown" data-wow-delay="300ms">
-            {% if not has_home and page.is_primary and forloop.first %}
-    <li id="breadcrumb-menu-home">
-        <a href="{% url "home" %}">{% trans "Home" %}</a>
-    </li>
-    {% endif %}
-
-
-    {% if page.is_current %}
-    <li id="breadcrumb-menu-{{ page.html_id }}"
-        class="active">{{ page.title }}</li>
-    {% else %}
-    <li id="breadcrumb-menu-{{ page.html_id }}">
-        <a href="{{ page.get_absolute_url }}">{{ page.title }}</a>
-    </li>
-    {% endif %}
-          </ol>
-          <h1 class="page-title wow fadeInRight" data-wow-delay="300ms">
-            {{ page.title }}
-          </h1>
-        </div>
-      </div>
-    </div>
-    <!-- Page Header End-->
-
-{% endblock %}
 {% block main %}
 <div class="container">
     <div class="row">
@@ -190,10 +159,6 @@
     </div>
 </div>
 {% endblock %}
-
-
-
-
 
 
 <!-- Footer Section Start -->

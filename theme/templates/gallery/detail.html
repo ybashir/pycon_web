@@ -14,11 +14,11 @@
         <div class="container">
             <div class="col-md-12">
                 <h2 class="section-title wow fadeInUp">{{ gallery.title }}</h2>
-                <p class="section-subcontent wow fadeInUp animated">{{ gallery.gallery_description }}</p>
+                <p class="section-subcontent wow fadeInUp animated">{{ gallery.gallery_description|default_if_none:"" }}</p>
             </div>
             <div class="gallery-wrap wow fadeInDown">
                 {% for gallery_image in gallery.galleryimage_set.all %}
-                    {% include 'generic/gallery_image.html' with gallery_image=gallery_image MEDIA_URL=MEDIA_URL only %}
+                    {% include 'generic/gallery_image.html' with gallery_image=gallery_image MEDIA_URL=MEDIA_URL show_detail_link=False only %}
                 {% endfor %}
             </div>
         </div>

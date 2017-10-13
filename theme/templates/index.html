@@ -180,7 +180,7 @@
                 <div class="gallery-wrap wow fadeInDown">
                 {% featured_gallery_images 6 as images %}
                 {% for gallery_image in images %}
-                    {% include 'generic/gallery_image.html' with gallery_image=gallery_image MEDIA_URL=MEDIA_URL only %}
+                    {% include 'generic/gallery_image.html' with gallery_image=gallery_image MEDIA_URL=MEDIA_URL show_detail_link=True only %}
                 {% endfor %}
                 </div>
             </div>
