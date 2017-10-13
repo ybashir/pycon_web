@@ -1,0 +1,9 @@
+<div class="col-md-4 col-sm-4 col-xs-12 gellery-pn">
+    <div class="gallery-item"><a href="#"><img alt="" src="{{ MEDIA_URL }}{{ gallery_image.image }}"/></a>
+        <div class="overlay">
+            <div class="icons"><a class="preview lightbox"
+                                  href="{{ MEDIA_URL }}{{ gallery_image.image }}"><i class="icon-eye"></i></a>
+                <a class="link" href="{{ gallery_image.gallery.get_absolute_url }}"><i class="icon-link"></i></a></div>
+        </div>
+    </div>
+</div>

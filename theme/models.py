@@ -8,8 +8,8 @@ from mezzanine.utils.models import upload_to
 
 
 class Speaker(Displayable):
-    designation = models.CharField(max_length=20)
-    organization = models.CharField(max_length=30)
+    designation = models.CharField(max_length=100)
+    organization = models.CharField(max_length=100)
     bio = models.TextField()
     profile_image = FileField(verbose_name=_("Profile Image"),
                               upload_to=upload_to("", "teacher"),
