@@ -6,6 +6,91 @@
     max-height: 180px;
     overflow: hidden;
 }
+.carousel-inner .item{
+    max-height: calc(100vh - 120px);
+}
+#carousel-area .carousel-inner .item .carousel-caption{
+    top: 50%;
+    transform: translateY(-75%);
+}
+
+.spnsors-logo img{
+    width: 100%;
+    max-width: 200px;
+}
+
+#sponsors .spnsors-logo{
+    line-height: 250px;
+    height: 250px;
+    padding: 0 30px;
+    margin-bottom: 30px;
+}
+speakers-member{
+    overflow: hidden;
+}
+.blog-image{
+    height: 300px;
+}
+#speakers .speakers-member:hover .member-img img{
+    margin-top: 0;
+    -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(0%);
+}
+#speakers .speakers-member img {
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+}
+.member-desc{
+    line-height: 22px;
+}
+
+.member-desc .social-icon{
+    margin-top: 10px;
+}
+
+.gellery-pn{
+    position: relative;
+}
+.gellery-pn h2{
+    position: absolute;
+    z-index: 2;
+    color: #fff;
+    font-size: 20px;
+    bottom: 12px;
+    left: 15px;
+    text-shadow: 0px 0px 5px #000;
+}
+
+.section-title{
+    font-size: 32px;
+}
+
+.form-group input{
+    max-width: 100% !important;
+}
+
+form .btn-common{
+    margin: 0 auto 30px;
+    display: block;
+}
+
+.extra-margin{
+    margin-top: 45px !important;
+}
+.form-group > textarea {
+    max-height: 113px;
+    overflow: auto;
+}
+
+a.navbar-brand {
+    padding-top: 10px;
+}
+
+@media (max-width: 1024px) and (min-width: 768px){
+    #carousel-area .carousel-inner .item .carousel-caption {
+        top: 50%;
+    }
+}
 
 /* Style for social icon on contact-us*/
 #contact .social a .fa-facebook:hover {
@@ -29,11 +114,16 @@
     font-size: 22px;
     background: #f1f1f1;
     padding: 20px;
+    text-align: center;
     text-transform: capitalize;
 }
 
 .select-ticket-widget {
     padding: 30px;
+}
+
+section#pricing{
+    padding:30px 0 5px;
 }
 
 .select-tickets {
