@@ -86,6 +86,10 @@ a.navbar-brand {
     padding-top: 10px;
 }
 
+.speakers-member .member-desc p{
+    height: 60px;
+}
+
 @media (max-width: 1024px) and (min-width: 768px){
     #carousel-area .carousel-inner .item .carousel-caption {
         top: 50%;
