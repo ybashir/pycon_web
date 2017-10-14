@@ -92,11 +92,22 @@ a.navbar-brand {
 .speakers-member .member-desc p{
     height: 60px;
 }
+.speakers-member img{
+    max-width: 100%;
+}
 
-@media (max-width: 1024px) and (min-width: 768px){
-    #carousel-area .carousel-inner .item .carousel-caption {
-        top: 50%;
-    }
+#contact .label-line.textarea {
+    height: 104px;
+}
+
+#contact textarea{
+    height: 104px;
+}
+
+.navbar-brand>img {
+    display: block;
+    max-width: 130px;
+    padding-top: 10px;
 }
 
 /* Style for social icon on contact-us*/
@@ -156,7 +167,7 @@ section#pricing{
     height: 40px;
     padding: 0 10px;
     border: 1px solid #ccc !important;
-    background: transparent url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png") no-repeat 70px 10px;
+    background: transparent url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png") no-repeat 92% 10px;
     -webkit-appearance: none;
     -moz-appearance: none;
 }
@@ -221,4 +232,86 @@ section#pricing{
 
 .hidden{
     display: none;
+}
+
+/* Media Queries*/
+
+@media (max-width: 767px){
+    .navbar-brand img {
+        margin-top: 0 !important;
+        width: 65%;
+    }
+    .rev-scroll-btn{
+        display: none;
+    }
+    .section{
+        padding: 35px 0;
+    }
+    #carousel-area .carousel-control{
+        top: 50%;
+    }
+    #carousel-area .carousel-inner .item .carousel-caption{
+        transform: translateY(-80%);
+    }
+    #carousel-area .carousel-inner .item .carousel-caption .btn-common{
+        display: inline-block;
+    }
+    #carousel-area .carousel-inner .item .carousel-caption {
+        top: 6%;
+        transform: translateY(0%);
+    }
+    .time-countdown{
+        margin-top: 20px;
+        text-align: center;
+    }
+    .time-entry {
+        margin-right: 5px;
+        padding: 10px 0;
+        min-width: 70px;
+        font-size: 13px;
+    }
+    .time-entry span{
+        font-size: 24px;
+        margin-bottom: 0;
+    }
+    .countdown-timer .btn-lg{
+        margin-top: 0;
+    }
+    .countdown-timer .text{
+        text-align: center;
+    }
+    .countdown-timer .text h2{
+        margin-top: 0;
+    }
+    .select-tickets select{
+        width: 100%;
+    }
+    .select-ticket-widget{
+        padding: 30px 0;
+    }
+    .slicknav_nav{
+        overflow-y: auto;
+        margin: 0 -15px;
+        width: auto;
+    }
+    .slicknav_nav li{
+        background-color: #4CAF50;
+    }
+    .slicknav_nav li a{
+        color: #fff;
+    }
+    .slicknav_nav .active{
+        color: #1f541c;
+    }
+    .slicknav_nav a{
+        margin: 1px 5px;
+    }
+    .slicknav_nav a:hover{
+        color: #1f541c;
+    }
+}
+@media (max-width: 1024px) and (min-width: 768px){
+    #carousel-area .carousel-inner .item .carousel-caption {
+        top: 50%;
+    }
 }
