@@ -28,6 +28,11 @@
                     <i class="fa fa-dribbble"></i>
                 </a>
             {% endif %}
+            {% if speaker.personal_web_link %}
+                <a class="social" href="{{ speaker.personal_web_link }}" target="_blank">
+                    <i class="fa fa-globe"></i>
+                </a>
+            {% endif %}
             </div>
         </div>
     </div>
