@@ -40,5 +40,10 @@
         else {
             phone_field.parent().removeClass('has-error');
         }
-        return errors_div.children().length === 0;
+
+        if(errors_div.children().length === 0) {
+            errors_div.addClass('hidden');
+            return true;
+        }
+        return false;
     }
