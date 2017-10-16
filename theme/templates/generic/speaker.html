@@ -5,7 +5,8 @@
         <div class="member-img"><img alt="" src="{{ MEDIA_URL }}{{ speaker.profile_image }}"/></div>
         <div class="member-desc">
             <h3>{{ speaker.title }}</h3>
-            <h5>{{ speaker.designation }}, {{ speaker.organization }}</h5>
+            <h5>{{ speaker.designation }}</h5>
+            <h6>{{ speaker.organization }}</h6>
             <p>{{ speaker.bio|truncatechars_html:100|richtext_filters|safe }}</p>
             <div class="social-icon">
             {% if speaker.facebook_link %}
