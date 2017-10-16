@@ -81,7 +81,7 @@ form .btn-common{
     margin-top: 45px !important;
 }
 .form-group > textarea {
-    max-height: 143px;
+    max-height: 113px;
     overflow: auto;
 }
 
