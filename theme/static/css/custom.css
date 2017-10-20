@@ -50,6 +50,10 @@ speakers-member{
     -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
     filter: grayscale(100%);
 }
+.speakers-member .member-img{
+    padding: 0;
+    text-align: left;
+}
 .member-desc{
     line-height: 22px;
     padding: 15px 20px 30px;
