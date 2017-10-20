@@ -31,9 +31,16 @@ speakers-member{
 .blog-image{
     height: 300px;
 }
-.blog-info{
-    height: 200px;
+
+#blog .blog-info{
+    height: 200px !important;
+    padding: 15px !important;
 }
+
+#blog .blog-info{
+    padding: 0 20px;
+}
+
 #speakers .speakers-member:hover .member-img img{
     margin-top: 0;
     -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
