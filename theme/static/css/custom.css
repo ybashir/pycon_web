@@ -122,6 +122,10 @@ a.navbar-brand {
     padding-top: 10px;
 }
 
+#schedule .table tr td:last-child, #schedule .table tr th:last-child, #schedule .table tr td:nth-last-child(2), #schedule .table tr th:nth-last-child(2) {
+    text-align: center;
+}
+
 /* Style for social icon on contact-us*/
 #contact .social a .fa-facebook:hover {
   color: #3b5998;
