@@ -87,49 +87,11 @@
                     {% editable blog_post.content %}
                     {{ blog_post.content|richtext_filters|safe }}
                     {% endeditable %}
-                    {% endblock %}                    <!-- Share social -->
-                    <div class="share">
-                      <div class="social-link">
-                        <span>Share this Post</span>
-                        <a class="twitter" target="_blank" data-original-title="twitter" href="#" data-toggle="tooltip" data-placement="top"><i class="fa fa-twitter"></i></a>
-                        <a class="facebook" target="_blank" data-original-title="facebook" href="#" data-toggle="tooltip" data-placement="top"><i class="fa fa-facebook"></i></a>
-                        <a class="google" target="_blank" data-original-title="google-plus" href="#" data-toggle="tooltip" data-placement="top"><i class="fa fa-google-plus"></i></a>
-                        <a class="linkedin" target="_blank" data-original-title="linkedin" href="#" data-toggle="tooltip" data-placement="top"><i class="fa fa-linkedin"></i></a>
-                      </div>
-                    </div>
+                    {% endblock %}
                 </div>
                 <!-- Post Content -->
               </div>
               <!-- End Single Post Area -->
-
-              <!-- Start Comment Area -->
-              <div id="comments">
-
-
-
-                <!-- Start Respond Form -->
-                <div id="respond">
-                  <form action="#">
-                    <div class="row">
-                      <div class="col-md-4">
-                        <input id="author" class="form-control" name="author" type="text" value="" size="30" placeholder="Full Name">
-                      </div>
-                      <div class="col-md-4">
-                        <input id="email" class="form-control" name="author" type="text" value="" size="30" placeholder="Email Address">
-                      </div>
-                      <div class="col-md-4">
-                      <input id="url" class="form-control" name="url" type="text" value="" size="30" placeholder="Website">
-                      </div>
-                      <div class="col-md-12">
-                        <textarea id="comment" class="form-control" name="comment" cols="102" rows="8" placeholder="Messages"></textarea>
-                        <button type="submit" id="submit" class="btn btn-common">Submit Review</button>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-                <!-- End Respond Form -->
-              </div>
-              <!-- End Comment Area -->
             </div>
           {% include 'blog/sidebar.html' %}
           </div>
