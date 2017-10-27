@@ -93,7 +93,9 @@ form .btn-common{
     margin-top: 45px !important;
 }
 .form-group > textarea {
-    max-height: 113px;
+    max-height: 193px;
+    max-width: 100%;
+    min-height: 193px;
     overflow: auto;
 }
 
@@ -330,4 +332,7 @@ section#pricing{
     #carousel-area .carousel-inner .item .carousel-caption {
         top: 50%;
     }
+}
+.form-group > select{
+    max-width: 100%;
 }
