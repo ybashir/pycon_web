@@ -163,6 +163,10 @@ a.navbar-brand {
     padding: 30px;
 }
 
+.alert{
+    border-radius: 0;
+}
+
 section#pricing{
     padding:30px 0 5px;
 }
@@ -256,6 +260,7 @@ section#pricing{
 .hidden{
     display: none;
 }
+
 
 /* Media Queries*/
 
