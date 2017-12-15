@@ -167,6 +167,22 @@ a.navbar-brand {
     border-radius: 0;
 }
 
+.mezzanine-form .overlay{
+    position: relative;
+    user-select: none;
+}
+
+.mezzanine-form .overlay:before{
+    position: absolute;
+    content: "";
+    left: -15px;
+    right: -15px;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(255,255,255,0.7);
+    z-index: 1;
+}
+
 section#pricing{
     padding:30px 0 5px;
 }
