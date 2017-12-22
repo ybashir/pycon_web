@@ -8,6 +8,8 @@ from django.utils.translation import ugettext_lazy as _
 # MEZZANINE SETTINGS #
 ######################
 
+FILEBROWSER_MAX_UPLOAD_SIZE = 300000000
+
 # The following settings are already defined with default values in
 # the ``defaults.py`` module within each of Mezzanine's apps, but are
 # common enough to be put here, commented out, for conveniently
