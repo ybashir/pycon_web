@@ -121,7 +121,7 @@ a.navbar-brand {
 .navbar-brand>img {
     display: block;
     max-width: 130px;
-    padding-top: 10px;
+    padding-top: 5px;
 }
 
 #schedule .table tr td:last-child, #schedule .table tr th:last-child, #schedule .table tr td:nth-last-child(2), #schedule .table tr th:nth-last-child(2) {
