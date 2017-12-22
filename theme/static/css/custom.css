@@ -277,6 +277,19 @@ section#pricing{
     display: none;
 }
 
+.squared li{
+    list-style-type: square;
+    color: #adadad;
+    padding: 3px 5px;
+}
+
+.squared li a:focus{
+    color: #4CAF50;
+}
+
+.squared li i{
+    font-size: 80%;
+}
 
 /* Media Queries*/
 

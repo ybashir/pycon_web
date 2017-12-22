@@ -41,7 +41,7 @@
                 <div class="col-md-6 col-sm-6 col-xs-12 wow fadeInLeft">
                     <div class="text">
                         <h2>PyCon Pakistan</h2>
-                        <h4>FAST Campus, Lahore <br/> Dec 16, 2017</h4>
+                        <h4>FAST Campus, Lahore <br/> Oct 27, 2018 (Tentative)</h4>
                         <a class="btn btn-lg btn-common" href="/buy-tickets">Buy Tickets</a></div>
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-12 wow fadeInRight">
@@ -72,7 +72,7 @@
                         <div class="icon"><i class="icon-calendar"></i></div>
                         <div class="desc">
                             <h4><a href="/schedule">Date &amp; Time</a></h4>
-                            <p>10AM - 8PM, Dec 16, 2017</p>
+                            <p>October 27, 2018 (Tentative)</p>
                         </div>
                     </div>
                 </div>
@@ -81,7 +81,10 @@
                         <div class="icon"><i class="icon-microphone"></i></div>
                         <div class="desc">
                             <h4><a href="/speakers">Speakers</a></h4>
-                            <p>{% speaker_count as speaker_count %}{{ speaker_count }} Tech Icons and Professionals</p>
+                            <p>
+                                <!--{% speaker_count as speaker_count %}{{ speaker_count }} -->
+                                Tech Icons and Professionals
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -90,7 +93,10 @@
                         <div class="icon"><i class="icon-wallet"></i></div>
                         <div class="desc left">
                             <h4><a href="/buy-tickets">Tickets</a></h4>
-                            <p>{% total_passes_booked as passes %}{{ passes }} People</p>
+                            <p>
+                                <!--{% total_passes_booked as passes %}{{ passes }} -->
+                                Coming Soon
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -146,39 +152,39 @@
     <!-- Featured Section End -->
     <p></p>
     <!-- Sponsors Section Start -->
-    <section class="section" id="sponsors">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h2 class="section-title wow fadeInUp">Our Sponsors</h2>
-                    <p class="section-subcontent wow fadeInUp">Sponsors are what will make this conference possible.</p>
-                </div>
-                {% featured_sponsors 4 as sponsors %}
-                {% for sponsor in sponsors reversed%}
-                    {% include 'generic/sponsor.html' with sponsor=sponsor MEDIA_URL=MEDIA_URL only %}
-                {% endfor %}
+    <!--<section class="section" id="sponsors">-->
+        <!--<div class="container">-->
+            <!--<div class="row">-->
+                <!--<div class="col-md-12">-->
+                    <!--<h2 class="section-title wow fadeInUp">Our Sponsors</h2>-->
+                    <!--<p class="section-subcontent wow fadeInUp">Sponsors are what will make this conference possible.</p>-->
+                <!--</div>-->
+                <!--{% featured_sponsors 4 as sponsors %}-->
+                <!--{% for sponsor in sponsors reversed%}-->
+                    <!--{% include 'generic/sponsor.html' with sponsor=sponsor MEDIA_URL=MEDIA_URL only %}-->
+                <!--{% endfor %}-->
 
-            </div>
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <h3>Want to contribute?</h3>
-                <p>If you have any questions about sponsoring PyCon, <a href="/contact-us">contact us</a></p>
-            </div>
-        </div>
-        <div class="row" style="margin-top: 40px;">
-            <div class="col-md-12">
-                <h2 class="section-title wow fadeInUp animated" style="visibility: visible;">Our media Partner</h2>
-            </div>
-            <div class="col-md-3 col-sm-6 col-xs-12" style="float: none;margin: auto;display: table;">
-                <div class="spnsors-logo wow fadeInUp animated" style="visibility: visible;">
-                    <a href="https://www.dawn.com/">
-                        <img alt="" src="/static/media/uploads/dawnnew.png">
-                    </a>
-                </div>
-            </div>
-        </div>
-        </div>
-    </section>
+            <!--</div>-->
+        <!--<div class="row">-->
+            <!--<div class="col-md-12 text-center">-->
+                <!--<h3>Want to contribute?</h3>-->
+                <!--<p>If you have any questions about sponsoring PyCon, <a href="/contact-us">contact us</a></p>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="row" style="margin-top: 40px;">-->
+            <!--<div class="col-md-12">-->
+                <!--<h2 class="section-title wow fadeInUp animated" style="visibility: visible;">Our media Partner</h2>-->
+            <!--</div>-->
+            <!--<div class="col-md-3 col-sm-6 col-xs-12" style="float: none;margin: auto;display: table;">-->
+                <!--<div class="spnsors-logo wow fadeInUp animated" style="visibility: visible;">-->
+                    <!--<a href="https://www.dawn.com/">-->
+                        <!--<img alt="" src="/static/media/uploads/dawnnew.png">-->
+                    <!--</a>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+    <!--</section>-->
     <!-- Sponsors Section End -->
     <p></p>
     <!-- Gallery Section Start -->
@@ -206,26 +212,26 @@
     <!-- Gallery Section End -->
     <p></p>
     <!-- Speakers Section Start -->
-    <section class="section" id="speakers">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h2 class="section-title wow fadeInUp">Meet Our Speakers</h2>
-                </div>
-                {% featured_speakers 6 as speakers %}
-                {% for speaker in speakers reversed%}
-                    {% include 'generic/speaker.html' with speaker=speaker MEDIA_URL=MEDIA_URL only %}
-                {% endfor %}
-            </div>
-        {% if speaker_count > 6 %}
-        <div class="row">
-            <div class="col-md-12">
-                <div class="more-btn text-center"><a class="btn btn-common wow fadeInUp" href="/speakers">show more</a></div>
-            </div>
-        </div>
-        {% endif %}
-        </div>
-    </section>
+    <!--<section class="section" id="speakers">-->
+        <!--<div class="container">-->
+            <!--<div class="row">-->
+                <!--<div class="col-md-12">-->
+                    <!--<h2 class="section-title wow fadeInUp">Meet Our Speakers</h2>-->
+                <!--</div>-->
+                <!--{% featured_speakers 6 as speakers %}-->
+                <!--{% for speaker in speakers reversed%}-->
+                    <!--{% include 'generic/speaker.html' with speaker=speaker MEDIA_URL=MEDIA_URL only %}-->
+                <!--{% endfor %}-->
+            <!--</div>-->
+        <!--{% if speaker_count > 6 %}-->
+        <!--<div class="row">-->
+            <!--<div class="col-md-12">-->
+                <!--<div class="more-btn text-center"><a class="btn btn-common wow fadeInUp" href="/speakers">show more</a></div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--{% endif %}-->
+        <!--</div>-->
+    <!--</section>-->
     <!-- Speakers Section End -->
     <p></p>
     <!-- Blog Section Start -->
