@@ -1,0 +1,83 @@
+{% extends "pages/page.html" %}
+
+{% load i18n mezzanine_tags form_tags %}
+
+{% block left_wrapper %}
+{% endblock %}
+{% block breadcrumbs %}
+{% endblock %}
+<div class="col-md-{% block main_col_size %}8{% endblock %}">
+    {% block main %}
+        {{ block.super }}
+        {% if request.GET.sent %}
+            {% editable page.form.response %}
+                {{ page.form.response|richtext_filters|safe }}
+            {% endeditable %}
+        {% else %}
+            {% with page.form as page_form %}
+                {% editable page_form.content %}
+                    {{ page_form.content|richtext_filters|safe }}
+                {% endeditable %}
+            {% endwith %}
+            <div class="container">
+                {% errors_for form %}
+            </div>
+            {% list_iterator form as fields %}
+            <form class="mezzanine-form" method="post"
+                    {% if form.is_multipart %}enctype="multipart/form-data"{% endif %}>
+                {% nevercache %}
+                    <input type="hidden" name="referrer" value="{{ request.META.HTTP_REFERER }}">
+                    {% csrf_token %}
+                {% endnevercache %}
+
+                {% for field in form %}
+                    {% if field.is_hidden %}
+                        {{ field }}
+
+                    {% endif %}
+                {% endfor %}
+
+                <div class="container">
+                    <div class="row">
+                        <div class="form-widget">
+                            <h3>Submission From</h3>
+                            <div class="registration-information clearfix">
+                                <div class="row">
+                                    <div class="col-sm-6 col-md-8 col-md-offset-2">
+                                        <h4>Your Information</h4>
+                                        {% render_field fields.0 %}
+                                        {% render_field fields.1 %}
+                                        {% render_field fields.2 %}
+                                        {% render_field fields.3 %}
+                                        {% render_field fields.4 %}
+                                        {% render_field fields.5 %}
+                                        {% render_field fields.6 %}
+                                        {% render_field fields.7 %}
+                                        {% render_field fields.8 %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="alert alert-danger hidden" id="validation-errors"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <input class="btn btn-common wow" type="submit" value="{{ page.form.button_text }}">
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        {% endif %}
+
+    {% endblock %}
+</div>
+
+
+{% block extra_js %}
+    {{ block.super }}
+{% endblock %}
