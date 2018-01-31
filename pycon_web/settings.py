@@ -245,6 +245,7 @@ INSTALLED_APPS = (
   "mezzanine.forms",
   "mezzanine.galleries",
   "mezzanine.twitter",
+  "captcha"
   # "mezzanine.accounts",
   # "mezzanine.mobile",
 )
@@ -291,6 +292,16 @@ OPTIONAL_APPS = (
   "compressor",
   PACKAGE_NAME_FILEBROWSER,
   PACKAGE_NAME_GRAPPELLI,
+)
+
+RECAPTCHA_PUBLIC_KEY = '6LdRe0MUAAAAAHvCgqWmQVdXlrbS21-8NMHdSHDO'
+# this is a test key and all verification requests will pass
+RECAPTCHA_PRIVATE_KEY = '6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe'
+NOCAPTCHA = True
+
+
+FORMS_EXTRA_FIELDS = (
+    (100, "captcha.fields.ReCaptchaField", "ReCaptcha"),
 )
 
 ##################
