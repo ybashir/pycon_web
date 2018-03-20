@@ -304,6 +304,10 @@ FORMS_EXTRA_FIELDS = (
     (100, "captcha.fields.ReCaptchaField", "ReCaptcha"),
 )
 
+EXTENSIONS = {
+    'Document': ['.pdf', '.doc', '.docx']  
+}
+
 ##################
 # LOCAL SETTINGS #
 ##################
