@@ -385,3 +385,15 @@ section#pricing{
     z-index: -999999;
     opacity: 0;
 }
+
+.dropdown-submenu > a::after { margin-top: 15px; }
+.navbar-event .dropdown .dropdown-menu li .dropdown-menu  {
+    left: 100%;
+    top: 4px;
+}
+
+.navbar-event .dropdown .dropdown-menu > li > a:hover, .navbar-event .dropdown .dropdown-menu > li > a .active, .navbar-event .dropdown .dropdown-menu > li:hover > a { color: #4CAF50; }
+@media (max-width: 767px){
+    .slicknav_nav li { padding: 0 0 0 15px; }
+    .slicknav_nav li ul li { padding: 0; }
+}
