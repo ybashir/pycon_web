@@ -291,7 +291,68 @@ section#pricing{
     font-size: 80%;
 }
 
+.dropdown-submenu > a::after { margin-top: 15px; }
+.navbar-event .dropdown .dropdown-menu li .dropdown-menu  {
+    left: 100%;
+    top: 4px;
+}
+
+.navbar-event .dropdown .dropdown-menu > li > a:hover,
+.navbar-event .dropdown .dropdown-menu > li > a .active,
+.navbar-event .dropdown .dropdown-menu > li:hover > a { color: #4CAF50; }
+.navbar-event .dropdown .dropdown-menu > li.active > a:hover,
+.navbar-event .dropdown .dropdown-menu > li.active:hover > a { color: #fff; }
+.back-to-top i { line-height: 38px; }
+#event { background-attachment: fixed; }
+.speakers-member .member-desc { padding: 15px 25px 30px; }
+.speakers-member { min-height: 520px; }
+
 /* Media Queries*/
+
+@media (max-width: 1199px) {
+    .countdown-timer .text { padding: 10px 50px; }
+    .countdown-timer .text h2 {
+        font-size: 30px;
+        line-height: 38px;
+    }
+    .time-entry {
+        min-width: 100px;
+        margin-right: 12px;
+    }
+    .time-entry span {
+        font-size: 30px;
+        line-height: 35px;
+    }
+    #blog .blog-info { height: 260px !important; }
+}
+
+@media (max-width: 1024px) and (min-width: 768px){
+    #carousel-area .carousel-inner .item .carousel-caption {
+        top: 45%;
+    }
+    .navbar-event .navbar-nav li a { padding: 0 20px; }
+    .countdown-timer .text { padding: 10px 30px; }
+    .time-entry {
+        min-width: 70px;
+        font-size: 12px;
+        padding: 12px;
+    }
+    .time-entry span {
+        font-size: 22px;
+        line-height: 25px;
+    }
+    .countdown-timer .text h2 {
+        font-size: 25px;
+        line-height: 30px;
+        margin-top: 0;
+    }
+    .countdown-timer .btn-lg {
+        margin-top: 10px;
+        padding: 10px 30px;
+    }
+    .time-countdown { margin-top: 50px; }
+    #blog .blog-info { height: 230px !important; }
+}
 
 @media (max-width: 767px){
     .navbar-brand img {
@@ -324,8 +385,11 @@ section#pricing{
     .time-entry {
         margin-right: 5px;
         padding: 10px 0;
-        min-width: 70px;
-        font-size: 13px;
+        min-width: 63px;
+        font-size: 10px;
+        float: none !important;
+        display: inline-block;
+        vertical-align: top;
     }
     .time-entry span{
         font-size: 24px;
@@ -339,6 +403,8 @@ section#pricing{
     }
     .countdown-timer .text h2{
         margin-top: 0;
+        font-size: 23px;
+        line-height: 30px;
     }
     .select-tickets select{
         width: 100%;
@@ -368,11 +434,16 @@ section#pricing{
     }
     .slicknav_nav li { padding: 0 0 0 15px; }
     .slicknav_nav li ul li { padding: 0; }
-}
-@media (max-width: 1024px) and (min-width: 768px){
-    #carousel-area .carousel-inner .item .carousel-caption {
-        top: 50%;
+    .back-to-top {
+        bottom: 15px;
+        right: 20px;
     }
+    .speakers-member {
+        min-height: inherit;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    #blog .blog-info { height: auto !important; }
 }
 .form-group > select{
     max-width: 100%;
@@ -387,11 +458,3 @@ section#pricing{
     z-index: -999999;
     opacity: 0;
 }
-
-.dropdown-submenu > a::after { margin-top: 15px; }
-.navbar-event .dropdown .dropdown-menu li .dropdown-menu  {
-    left: 100%;
-    top: 4px;
-}
-
-.navbar-event .dropdown .dropdown-menu > li > a:hover, .navbar-event .dropdown .dropdown-menu > li > a .active, .navbar-event .dropdown .dropdown-menu > li:hover > a { color: #4CAF50; }
