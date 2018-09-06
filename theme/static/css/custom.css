@@ -309,8 +309,11 @@ section#pricing{
 
 /* home page video Section */
 .pycon-video .text{
-    padding: 50px 0;
     max-width: 450px;
+}
+.pycon-video .text h2 {
+    margin-bottom: 20px;
+    margin-top: 0;
 }
 .pycon-video-area iframe{
     height: 315px;
@@ -332,9 +335,6 @@ section#pricing{
         line-height: 35px;
     }
     #blog .blog-info { height: 260px !important; }
-    .pycon-video .text{
-        padding: 15px 0;
-    }
     .pycon-video-area iframe{
         height: 260px;
     }
@@ -366,9 +366,6 @@ section#pricing{
     }
     .time-countdown { margin-top: 50px; }
     #blog .blog-info { height: 230px !important; }
-    .pycon-video .text{
-        padding: 0;
-    }
     .pycon-video-area iframe{
         height: 200px;
         margin-top: 20px;
