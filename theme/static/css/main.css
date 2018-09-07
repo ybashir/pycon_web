@@ -992,14 +992,26 @@ fieldset[disabled] .btn {
 .gallery-item img {
   width: 100%;
 }
+.gallery-item .icons {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 50%;
+  margin: -24px 0 0;
+  text-align: center;
+  letter-spacing: -0.32em;
+}
+.gallery-item .icons * {
+  letter-spacing: normal;
+}
 .gallery-item .icons i {
+  display: block;
   color: #fff;
   border: 2px solid #fff;
   padding: 12px;
-  margin: -42px;
   font-size: 20px;
-  width: 42px;
-  height: 42px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   -webkit-transition: all 0.2s linear;
   -moz-transition: all 0.2s linear;
@@ -1011,20 +1023,27 @@ fieldset[disabled] .btn {
   border-color: #e91e63;
 }
 .gallery-item .icons .preview {
-  position: absolute;
-  left: 40%;
-  top: 45%;
+  position: relative;
+  left: -20px;
+  display: inline-block;
+  vertical-align: top;
+  width: 48px;
+  height: 48px;
   color: #fff;
+  margin: 0 7px;
   -webkit-transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
   -moz-transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
   -o-transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
   transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
 }
 .gallery-item .icons .link {
-  position: absolute;
-  left: 55%;
-  margin-left: 42px;
-  top: 45%;
+  margin: 0 7px;
+  position: relative;
+  right: -20px;
+  display: inline-block;
+  vertical-align: top;
+  width: 48px;
+  height: 48px;
   color: #fff;
   -webkit-transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
   -moz-transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
@@ -1032,10 +1051,10 @@ fieldset[disabled] .btn {
   transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1) 0s;
 }
 .gallery-item:hover .preview {
-  left: 45%;
+  left: 0;
 }
 .gallery-item:hover .link {
-  left: 50%;
+  right: 0;
 }
 /* ==========================================================================
    Video Section Style

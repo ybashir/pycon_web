@@ -307,6 +307,17 @@ section#pricing{
 .speakers-member .member-desc { padding: 15px 25px 30px; }
 .speakers-member { min-height: 520px; }
 
+/* home page video Section */
+.pycon-video .text{
+    max-width: 450px;
+}
+.pycon-video .text h2 {
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+.pycon-video-area iframe{
+    height: 315px;
+}
 /* Media Queries*/
 
 @media (max-width: 1199px) {
@@ -324,6 +335,9 @@ section#pricing{
         line-height: 35px;
     }
     #blog .blog-info { height: 260px !important; }
+    .pycon-video-area iframe{
+        height: 260px;
+    }
 }
 
 @media (max-width: 1024px) and (min-width: 768px){
@@ -352,6 +366,16 @@ section#pricing{
     }
     .time-countdown { margin-top: 50px; }
     #blog .blog-info { height: 230px !important; }
+    .pycon-video-area iframe{
+        height: 200px;
+        margin-top: 20px;
+    }
+    .navbar-event .navbar-nav li a {
+        padding: 0 14px;
+    }
+    .time-countdown {
+        margin-left: -10px;
+    }
 }
 
 @media (max-width: 767px){
@@ -444,7 +468,35 @@ section#pricing{
         margin-bottom: 20px;
     }
     #blog .blog-info { height: auto !important; }
+    .pycon-video .text{
+       max-width: 100%;
+        text-align: center;
+    }
+    .pycon-video-area iframe{
+        height: auto;
+    }
+    .pycon-video-area {
+        position:relative;
+        padding-bottom:56.25%;
+        padding-top:30px;
+        height:0;
+        overflow:hidden;
+    }
+
+    .pycon-video-area iframe, .pycon-video-area object, .pycon-video-area embed {
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+    }
+    .time-countdown {
+        margin-left: 0;
+    }
 }
+
+
+
 .form-group > select{
     max-width: 100%;
 }
