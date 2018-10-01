@@ -1,0 +1,40 @@
+{% load mezzanine_tags %}
+
+<div class="col-md-4 col-sm-6 col-xs-12">
+    <div class="speakers-member wow fadeIn waqas">
+        <div class="member-img"><img alt="" src="{{ MEDIA_URL }}{{ speaker.profile_image }}"/></div>
+        <div class="member-desc">
+            <h3>{{ speaker.title }}</h3>
+            <h5>{{ speaker.designation }}</h5>
+            <h6>{{ speaker.organization }}</h6>
+            <p>{{ speaker.bio|truncatechars_html:100|richtext_filters|safe }}</p>
+            <div class="social-icon">
+            {% if speaker.facebook_link %}
+                <a class="social" href="{{ speaker.facebook_link }}" target="_blank">
+                    <i class="fa fa-facebook"></i>
+                </a>
+            {% endif %}
+            {% if speaker.twitter_link %}
+                <a class="social" href="{{ speaker.twitter_link }}" target="_blank">
+                    <i class="fa fa-twitter"></i>
+                </a>
+            {% endif %}
+            {% if speaker.linked_in_link %}
+                <a class="social" href="{{ speaker.linked_in_link }}" target="_blank">
+                    <i class="fa fa-linkedin"></i>
+                </a>
+            {% endif %}
+            {% if speaker.dribble_link %}
+                <a class="social" href="{{ speaker.dribble_link }}" target="_blank">
+                    <i class="fa fa-dribbble"></i>
+                </a>
+            {% endif %}
+            {% if speaker.personal_web_link %}
+                <a class="social" href="{{ speaker.personal_web_link }}" target="_blank">
+                    <i class="fa fa-globe"></i>
+                </a>
+            {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

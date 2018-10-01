@@ -1,6 +1,6 @@
 from django.contrib import admin
 from mezzanine.core.admin import DisplayableAdmin, TabularDynamicInlineAdmin
-from theme.models import Speaker, HomePageSlide, Gallery, GalleryImage, Sponsor, Organizer
+from theme.models import Speaker, HomePageSlide, Gallery, GalleryImage, Sponsor, Organizer, Speaker18
 
 
 class SpeakerAdmin(DisplayableAdmin):
@@ -12,6 +12,13 @@ class SpeakerAdmin(DisplayableAdmin):
 
 class OrganizerAdmin(DisplayableAdmin):
     fieldsets = ((None, {'fields': ('title', 'designation', 'organization', 'profile_image',
+                                    'facebook_link', 'twitter_link', 'linked_in_link', 'dribble_link',
+                                    'personal_web_link')}),)
+    list_display = ('title', 'status', 'designation', 'organization')
+
+
+class Speaker18Admin(DisplayableAdmin):
+    fieldsets = ((None, {'fields': ('title', 'designation', 'organization', 'bio', 'profile_image',
                                     'facebook_link', 'twitter_link', 'linked_in_link', 'dribble_link',
                                     'personal_web_link')}),)
     list_display = ('title', 'status', 'designation', 'organization')
@@ -41,3 +48,4 @@ admin.site.register(Speaker, SpeakerAdmin)
 admin.site.register(Gallery, GalleryAdmin)
 admin.site.register(Sponsor, SponsorAdmin)
 admin.site.register(Organizer, OrganizerAdmin)
+admin.site.register(Speaker18, Speaker18Admin)
