@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load i18n mezzanine_tags organizer_tags %}
+
+{% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Organizers - PyCon Pakistan" %}
+{% endif %}{% endblock %}
+
+{% block breadcrumbs %}
+{% endblock %}
+{% block main %}
+    <!-- Speakers Section Start -->
+    <section class="section" id="speakers">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="section-title wow fadeInUp">Meet Our Organizers</h2>
+
+                </div>
+                {% all_organizers as organizers %}
+                {% for organizer in organizers reversed %}
+                    {% include 'generic/organizer.html' with speaker=organizer MEDIA_URL=MEDIA_URL only %}
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

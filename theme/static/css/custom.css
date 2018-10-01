@@ -63,6 +63,10 @@ speakers-member{
     margin-top: 10px;
 }
 
+.organizers .member-desc .social-icon{
+    margin-top: 35px;
+}
+
 .gellery-pn{
     position: relative;
 }
@@ -306,6 +310,7 @@ section#pricing{
 #event { background-attachment: fixed; }
 .speakers-member .member-desc { padding: 15px 25px 30px; }
 .speakers-member { min-height: 520px; }
+.speakers-member.organizers { min-height: 450px; }
 
 /* home page video Section */
 .pycon-video .text{

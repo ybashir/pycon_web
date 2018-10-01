@@ -25,6 +25,22 @@ class Speaker(Displayable):
         return '/speakers/'
 
 
+class Organizer(Displayable):
+    designation = models.CharField(max_length=100)
+    organization = models.CharField(max_length=100)
+    profile_image = FileField(verbose_name=_("Profile Image"),
+                              upload_to=upload_to("", "teacher"),
+                              format="Image", max_length=255, null=True, blank=True)
+    facebook_link = models.URLField(blank=True, null=True)
+    twitter_link = models.URLField(blank=True, null=True)
+    linked_in_link = models.URLField(blank=True, null=True)
+    dribble_link = models.URLField(blank=True, null=True)
+    personal_web_link = models.URLField(blank=True, null=True)
+
+    def get_absolute_url(self):
+        return '/organizers/'
+
+
 class HomePageSlide(Displayable, RichText):
     def get_absolute_url(self):
         pass
