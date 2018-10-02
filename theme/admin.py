@@ -20,7 +20,7 @@ class OrganizerAdmin(DisplayableAdmin):
 class Speaker18Admin(DisplayableAdmin):
     fieldsets = ((None, {'fields': ('title', 'designation', 'organization', 'bio', 'profile_image',
                                     'facebook_link', 'twitter_link', 'linked_in_link', 'dribble_link',
-                                    'personal_web_link')}),)
+                                    'github_link', 'personal_web_link')}),)
     list_display = ('title', 'status', 'designation', 'organization')
 
 

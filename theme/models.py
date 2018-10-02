@@ -52,6 +52,7 @@ class Speaker18(Displayable):
     twitter_link = models.URLField(blank=True, null=True)
     linked_in_link = models.URLField(blank=True, null=True)
     dribble_link = models.URLField(blank=True, null=True)
+    github_link = models.URLField(blank=True, null=True)
     personal_web_link = models.URLField(blank=True, null=True)
 
     def get_absolute_url(self):
