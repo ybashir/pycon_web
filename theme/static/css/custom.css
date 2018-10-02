@@ -515,3 +515,7 @@ section#pricing{
     z-index: -999999;
     opacity: 0;
 }
+
+#contact .information { padding: 55px 30px; }
+#contact .title-header { margin-bottom: 50px; }
+#contact .social { margin: 75px 0 22px; }
