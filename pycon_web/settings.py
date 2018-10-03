@@ -349,7 +349,7 @@ else:
   set_dynamic_settings(globals())
 
 BLOG_USE_FEATURED_IMAGE = True
-SITE_TITLE = "PyCon Pakistan 2017"
+SITE_TITLE = "PyCon Pakistan 2018"
 
 RICHTEXT_ALLOWED_ATTRIBUTES = (
 'abbr', 'accept', 'accept-charset', 'accesskey', 'action', 'align', 'alt', 'axis', 'border', 'cellpadding',

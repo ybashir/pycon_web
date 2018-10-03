@@ -343,6 +343,9 @@ section#pricing{
     .pycon-video-area iframe{
         height: 260px;
     }
+    .navbar-event .navbar-nav li a {
+        padding: 0 14px;
+    }
 }
 
 @media (max-width: 1024px) and (min-width: 768px){
@@ -381,6 +384,26 @@ section#pricing{
     .time-countdown {
         margin-left: -10px;
     }
+}
+
+@media (max-width: 992px) and (min-width: 768px) {
+    .navbar-header { float: none; }
+    .navbar-header .navbar-brand {
+        margin: 0 auto !important;
+        float: none;
+        display: block;
+        width: 130px;
+    }
+    .navbar-default .navbar-collapse { text-align: center; }
+    .navbar-right {
+        float: none !important;
+        margin: 0;
+    }
+    .navbar-nav>li {
+        float: none;
+        display: inline-block;
+    }
+    .navbar-event .navbar-nav li a { margin-right: -1px; }
 }
 
 @media (max-width: 767px){
@@ -516,6 +539,12 @@ section#pricing{
     opacity: 0;
 }
 
-#contact .information { padding: 55px 30px; }
-#contact .title-header { margin-bottom: 50px; }
-#contact .social { margin: 75px 0 22px; }
+.speakers-member .member-desc h5 {
+    line-height: normal;
+    min-height: 38px;
+}
+#sponsors { text-align: center; }
+#sponsors .col-md-3 {
+    float: none;
+    display: inline-block;
+}
