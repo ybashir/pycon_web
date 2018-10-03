@@ -1,7 +1,6 @@
-from theme.models import Speaker
+from theme.models import Speaker18
 from django import template
 from django.db.models import Q
-from mezzanine.blog.models import BlogPost
 from mezzanine.forms.models import Field, FieldEntry
 
 
@@ -9,18 +8,18 @@ register = template.Library()
 
 
 @register.simple_tag
-def featured_speakers(limit=3):
+def featured_speakers18(limit=3):
     return list(Speaker.objects.filter(featured=True)[:limit])
 
 
 @register.simple_tag
-def all_speakers():
-    return list(Speaker.objects.all())
+def all_speakers18():
+    return list(Speaker18.objects.all())
 
 
 @register.simple_tag
-def speaker_count():
-    return Speaker.objects.count()
+def speaker18_count():
+    return Speaker18.objects.count()
 
 
 @register.simple_tag
@@ -33,8 +32,3 @@ def total_passes_booked():
         total_passes += int(entry.value)
 
     return total_passes
-
-
-@register.simple_tag
-def blog_post_count():
-    return BlogPost.objects.count()
