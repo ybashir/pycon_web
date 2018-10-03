@@ -11,6 +11,7 @@ class Speaker(Displayable):
     designation = models.CharField(max_length=100)
     organization = models.CharField(max_length=100)
     bio = models.TextField()
+    conference_year = models.IntegerField(null=True, blank=True)
     profile_image = FileField(verbose_name=_("Profile Image"),
                               upload_to=upload_to("", "teacher"),
                               format="Image", max_length=255, null=True, blank=True)
@@ -39,24 +40,6 @@ class Organizer(Displayable):
 
     def get_absolute_url(self):
         return '/organizers/'
-
-class Speaker18(Displayable):
-    designation = models.CharField(max_length=100)
-    organization = models.CharField(max_length=100)
-    bio = models.TextField()
-    profile_image = FileField(verbose_name=_("Profile Image"),
-                              upload_to=upload_to("", "teacher"),
-                              format="Image", max_length=255, null=True, blank=True)
-    featured = models.BooleanField(default=False)
-    facebook_link = models.URLField(blank=True, null=True)
-    twitter_link = models.URLField(blank=True, null=True)
-    linked_in_link = models.URLField(blank=True, null=True)
-    dribble_link = models.URLField(blank=True, null=True)
-    github_link = models.URLField(blank=True, null=True)
-    personal_web_link = models.URLField(blank=True, null=True)
-
-    def get_absolute_url(self):
-        return '/speakers18/'
 
 
 class HomePageSlide(Displayable, RichText):
