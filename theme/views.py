@@ -1,5 +1,13 @@
 from django.views import generic
-from theme.models import Gallery
+from theme.models import Gallery, Speaker
+
+
+class SpeakersIndexView(generic.ListView):
+    template_name = 'pages/speakers.html'
+    context_object_name = 'speakers'
+
+    def get_queryset(self):
+        return Speaker.objects.published().filter(conference_year=self.kwargs['year'])
 
 
 class GalleryIndexView(generic.ListView):

@@ -14,11 +14,6 @@ def featured_speakers(limit=3):
 
 
 @register.simple_tag
-def all_speakers():
-    return list(Speaker.objects.all())
-
-
-@register.simple_tag
 def speaker_count():
     return Speaker.objects.count()
 
