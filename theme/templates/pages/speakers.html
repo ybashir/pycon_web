@@ -15,7 +15,7 @@
                     <h2 class="section-title wow fadeInUp">Meet Our Speakers</h2>
 
                 </div>
-                {% for speaker in speakers reversed %}
+                {% for speaker in speakers %}
                     {% include 'generic/speaker.html' with speaker=speaker MEDIA_URL=MEDIA_URL only %}
                 {% endfor %}
             </div>

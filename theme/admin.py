@@ -1,13 +1,15 @@
 from django.contrib import admin
 from mezzanine.core.admin import DisplayableAdmin, TabularDynamicInlineAdmin
+from orderable.admin import OrderableAdmin
+
 from theme.models import Speaker, HomePageSlide, Gallery, GalleryImage, Sponsor, Organizer
 
 
-class SpeakerAdmin(DisplayableAdmin):
-    fieldsets = ((None, {'fields': ('title', 'designation', 'organization', 'featured', 'bio', 'profile_image',
+class SpeakerAdmin(OrderableAdmin):
+    fieldsets = ((None, {'fields': ('name', 'designation', 'organization', 'featured', 'bio', 'profile_image',
                                     'conference_year', 'facebook_link', 'twitter_link', 'linked_in_link',
                                     'dribble_link', 'github_link', 'personal_web_link')}),)
-    list_display = ('title', 'status', 'featured', 'designation', 'organization')
+    list_display = ('name', 'featured', 'designation', 'organization', 'sort_order_display')
 
 
 class OrganizerAdmin(DisplayableAdmin):

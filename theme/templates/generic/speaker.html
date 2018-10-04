@@ -4,7 +4,7 @@
     <div class="speakers-member wow fadeIn">
         <div class="member-img"><img alt="" src="{{ MEDIA_URL }}{{ speaker.profile_image }}"/></div>
         <div class="member-desc">
-            <h3>{{ speaker.title }}</h3>
+            <h3>{{ speaker.name }}</h3>
             <h5>{{ speaker.designation }}</h5>
             <h6>{{ speaker.organization }}</h6>
             <p>{{ speaker.bio|truncatechars_html:100|richtext_filters|safe }}</p>

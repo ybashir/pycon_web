@@ -5,9 +5,11 @@ from mezzanine.pages.models import RichText
 from mezzanine.core.fields import FileField, RichTextField
 from mezzanine.pages.models import Displayable
 from mezzanine.utils.models import upload_to
+from orderable.models import Orderable
 
 
-class Speaker(Displayable):
+class Speaker(Orderable):
+    name = models.CharField(max_length=500)
     designation = models.CharField(max_length=100)
     organization = models.CharField(max_length=100)
     bio = models.TextField()

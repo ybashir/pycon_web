@@ -245,7 +245,8 @@ INSTALLED_APPS = (
   "mezzanine.forms",
   "mezzanine.galleries",
   "mezzanine.twitter",
-  "captcha"
+  "captcha",
+  "orderable"
   # "mezzanine.accounts",
   # "mezzanine.mobile",
 )
