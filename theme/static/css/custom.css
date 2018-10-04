@@ -539,7 +539,7 @@ section#pricing{
     opacity: 0;
 }
 
-.speakers-member .member-desc h5 {
+.speakers-member.organizers .member-desc h5 {
     line-height: normal;
     min-height: 38px;
 }
