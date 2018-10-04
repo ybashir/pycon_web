@@ -6,7 +6,7 @@ from theme.models import Speaker, HomePageSlide, Gallery, GalleryImage, Sponsor,
 class SpeakerAdmin(DisplayableAdmin):
     fieldsets = ((None, {'fields': ('title', 'designation', 'organization', 'featured', 'bio', 'profile_image',
                                     'conference_year', 'facebook_link', 'twitter_link', 'linked_in_link',
-                                    'dribble_link', 'personal_web_link')}),)
+                                    'dribble_link', 'github_link', 'personal_web_link')}),)
     list_display = ('title', 'status', 'featured', 'designation', 'organization')
 
 
