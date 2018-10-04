@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load i18n mezzanine_tags speaker_tags %}
+{% load i18n mezzanine_tags %}
 
 {% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Speakers - PyCon Pakistan" %}
 {% endif %}{% endblock %}
@@ -15,7 +15,6 @@
                     <h2 class="section-title wow fadeInUp">Meet Our Speakers</h2>
 
                 </div>
-                {% all_speakers as speakers %}
                 {% for speaker in speakers reversed %}
                     {% include 'generic/speaker.html' with speaker=speaker MEDIA_URL=MEDIA_URL only %}
                 {% endfor %}
