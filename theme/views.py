@@ -7,7 +7,7 @@ class SpeakersIndexView(generic.ListView):
     context_object_name = 'speakers'
 
     def get_queryset(self):
-        return Speaker.objects.published().filter(conference_year=self.kwargs['year'])
+        return Speaker.objects.filter(conference_year=self.kwargs['year'])
 
 
 class GalleryIndexView(generic.ListView):
