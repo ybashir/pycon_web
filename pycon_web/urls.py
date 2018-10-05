@@ -9,6 +9,8 @@ from django.views.i18n import set_language
 from mezzanine.core.views import direct_to_template
 from mezzanine.conf import settings
 
+from pycon_web.apps.urls import urlpatterns as apps_urls
+
 
 admin.autodiscover()
 
@@ -99,6 +101,7 @@ urlpatterns += [
 
     # ("^%s/" % settings.SITE_PREFIX, include("mezzanine.urls"))
 
+    url(r'^api/', include(apps_urls)),
 ]
 
 # Adds ``STATIC_URL`` to the context of error pages, so that error
