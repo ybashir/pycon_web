@@ -3,7 +3,6 @@
    ========================================================================== */
     function validate_form(){
         var errors_div = $('#validation-errors');
-        errors_div.removeClass('hidden');
         errors_div.empty();
         var email_fields = $('input[type=email]');
         if (email_fields[0].value !== email_fields[1].value) {
@@ -13,16 +12,6 @@
         else{
             email_fields.parent().removeClass('has-error');
         }
-
-        var ticket_counts = $('.select-tickets').children('select');
-
-        var sum = 0;
-        ticket_counts.each(function () {
-            sum += parseInt(this.value);
-        });
-
-        if(sum === 0)
-            errors_div.append('<li>At least select one ticket.</li>');
 
         var cnic_field = $("label:contains('CNIC')").siblings('input');
         if(cnic_field.val().length !== 13 || isNaN(cnic_field.val())) {
@@ -41,9 +30,12 @@
             phone_field.parent().removeClass('has-error');
         }
 
-        if(errors_div.children().length === 0) {
+        if(errors_div.children().length !== 0) {
+            errors_div.removeClass('hidden');
+            return false;
+        }
+        else {
             errors_div.addClass('hidden');
             return true;
         }
-        return false;
     }

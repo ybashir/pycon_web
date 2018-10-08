@@ -93,6 +93,10 @@ form .btn-common{
     display: block;
 }
 
+input[type="submit"].disabled{
+    background-color: #999999 !important;
+}
+
 .extra-margin{
     margin-top: 45px !important;
 }

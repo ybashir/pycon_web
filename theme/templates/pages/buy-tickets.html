@@ -23,7 +23,7 @@
                 {% errors_for form %}
             </div>
             {% list_iterator form as fields %}
-            <form class="mezzanine-form"
+            <form class="mezzanine-form" method="post" onsubmit="return validate_form();"
                     {% if form.is_multipart %}enctype="multipart/form-data"{% endif %}>
                 {% nevercache %}
                     <input type="hidden" name="referrer" value="{{ request.META.HTTP_REFERER }}">
@@ -38,47 +38,8 @@
                 {% endfor %}
                 <!-- Buy Tickets Section -->
                 <div class="container">
-                    <div class="row">
-                        <div class="alert alert-danger text-center">Registrations opening soon.</div>
-                    </div>
-                    <div class="overlay">
+                    <div class="">
                         <div class="row">
-
-                            <!-- Select Tickets -->
-                            <div class="form-widget">
-                                <h3>Select Tickets</h3>
-                                <div class="select-ticket-widget clearfix">
-                                    <div class="col-sm-4 col-xs-12">
-                                        <div class="select-tickets">
-                                            <div>
-                                                <h4>{{ fields.0.label }}</h4>
-                                                <span>Price: PKR 500/Ticket</span>
-                                            </div>
-                                            {{ fields.0 }}
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4 col-xs-12">
-                                        <div class="select-tickets">
-                                            <div>
-                                                <h4>{{ fields.1.label }}</h4>
-                                                <span>Price: PKR 1500/Ticket</span>
-                                            </div>
-                                            {{ fields.1 }}
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4 col-xs-12">
-                                        <div class="select-tickets">
-                                            <div>
-                                                <h4>{{ fields.2.label }}</h4>
-                                                <span>Free</span>
-                                            </div>
-                                            {{ fields.2 }}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Select Tickets -->
-
                             <!-- Select Tickets -->
                             <div class="form-widget">
                                 <h3>registration information</h3>
@@ -86,22 +47,22 @@
                                     <div class="row">
                                         <div class="col-sm-6 col-md-4 col-md-offset-2">
                                             <h4>Your Information</h4>
-                                            {% render_field fields.3 %}
-                                            {% render_field fields.4 %}
-                                            {% render_field fields.5 %}
+                                            {% render_field fields.0 %}
+                                            {% render_field fields.1 %}
+                                            {% render_field fields.2 %}
                                             <div class="form-group">
                                                 <label class="control-label" for="id_field_7">Confirm Email:*</label>
                                                 <input id="id_field_7" type="email" required>
                                             </div>
-                                            {% render_field fields.6 %}
-                                            {% render_field fields.7 %}
+                                            {% render_field fields.3 %}
+                                            {% render_field fields.4 %}
                                         </div>
                                         <div class="col-sm-6 col-md-4">
                                             <h4>Work Information</h4>
-                                            {% render_field fields.8 %}
+                                            {% render_field fields.5 %}
                                             <h4 class="extra-margin">Other Information</h4>
-                                            {% render_field fields.9 %}
-                                            {% render_field fields.10 %}
+                                            {% render_field fields.6 %}
+                                            {% render_field fields.7 %}
                                         </div>
                                     </div>
                                 </div>
@@ -113,11 +74,11 @@
                             </div>
                             <!-- Select Tickets -->
                         </div>
-                        <!--<div class="row">-->
-                        <!--<div class="col-xs-12">-->
-                        <!--<input class="btn btn-common btn-inverse wow disabled" type="submit" value="{{ page.form.button_text }}">-->
-                        <!--</div>-->
-                        <!--</div>-->
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <input class="btn btn-common wow" type="submit" value="{{ page.form.button_text }}">
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!-- Buy Tickets Section -->
