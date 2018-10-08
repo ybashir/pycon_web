@@ -3,7 +3,6 @@
    ========================================================================== */
     function validate_form(){
         var errors_div = $('#validation-errors');
-        errors_div.removeClass('hidden');
         errors_div.empty();
         var email_fields = $('input[type=email]');
         if (email_fields[0].value !== email_fields[1].value) {
@@ -31,9 +30,12 @@
             phone_field.parent().removeClass('has-error');
         }
 
-        if(errors_div.children().length === 0) {
+        if(errors_div.children().length !== 0) {
+            errors_div.removeClass('hidden');
+            return false;
+        }
+        else {
             errors_div.addClass('hidden');
             return true;
         }
-        return false;
     }
