@@ -14,16 +14,6 @@
             email_fields.parent().removeClass('has-error');
         }
 
-        var ticket_counts = $('.select-tickets').children('select');
-
-        var sum = 0;
-        ticket_counts.each(function () {
-            sum += parseInt(this.value);
-        });
-
-        if(sum === 0)
-            errors_div.append('<li>At least select one ticket.</li>');
-
         var cnic_field = $("label:contains('CNIC')").siblings('input');
         if(cnic_field.val().length !== 13 || isNaN(cnic_field.val())) {
             cnic_field.parent().addClass('has-error');

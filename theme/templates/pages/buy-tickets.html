@@ -23,7 +23,7 @@
                 {% errors_for form %}
             </div>
             {% list_iterator form as fields %}
-            <form class="mezzanine-form"
+            <form class="mezzanine-form" method="post" onsubmit="return validate_form();"
                     {% if form.is_multipart %}enctype="multipart/form-data"{% endif %}>
                 {% nevercache %}
                     <input type="hidden" name="referrer" value="{{ request.META.HTTP_REFERER }}">
@@ -76,7 +76,7 @@
                         </div>
                         <div class="row">
                             <div class="col-xs-12">
-                                <input class="btn btn-common btn-inverse wow disabled" type="submit" value="{{ page.form.button_text }}">
+                                <input class="btn btn-common wow" type="submit" value="{{ page.form.button_text }}">
                             </div>
                         </div>
                     </div>
