@@ -30,6 +30,11 @@
             phone_field.parent().removeClass('has-error');
         }
 
+        if($('div.multiplechoicefield :checkbox:checked').length === 0) {
+            errors_div.append('<li>Select at least one talk or workshop you are interested in.</li>');
+        }
+
+
         if(errors_div.children().length !== 0) {
             errors_div.removeClass('hidden');
             return false;

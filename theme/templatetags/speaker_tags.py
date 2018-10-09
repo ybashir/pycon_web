@@ -14,8 +14,8 @@ def featured_speakers(limit=3):
 
 
 @register.simple_tag
-def speaker_count():
-    return Speaker.objects.count()
+def speaker_count(year):
+    return Speaker.objects.filter(conference_year=year).count()
 
 
 @register.simple_tag
