@@ -552,3 +552,21 @@ section#pricing{
     float: none;
     display: inline-block;
 }
+#id_field_17 { margin: 0 0 0 4px; }
+#id_field_17 li {
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+    margin: 0 0 10px -4px;
+}
+#id_field_17 input[type=checkbox] { margin: 4px 5px 0 0; }
+.registration-information .checkboxes { padding: 0 15px; }
+#buy-ticket { float: right; }
+@media (max-width: 767px){
+    #id_field_17 { margin: 0; }
+    #id_field_17 li {
+        display: block;
+        width: 100%;
+        margin: 0 0 10px;
+    }
+}
