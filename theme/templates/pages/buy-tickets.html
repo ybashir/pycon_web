@@ -10,9 +10,12 @@
     {% block main %}
         {{ block.super }}
         {% if request.GET.sent %}
-            {% editable page.form.response %}
+            <script type="text/javascript">
+                window.location.href = "https://bookme.pk/events/PyCon_Pakistan";
+            </script>
+            {% comment %}{% editable page.form.response %}
                 {{ page.form.response|richtext_filters|safe }}
-            {% endeditable %}
+            {% endeditable %}{% endcomment %}
         {% else %}
             {% with page.form as page_form %}
                 {% editable page_form.content %}
@@ -65,10 +68,15 @@
                                             {% render_field fields.7 %}
                                         </div>
                                     </div>
+                                    <div class="row">
+                                        <div class="checkboxes col-md-offset-2">
+                                            {% render_field fields.8 %}
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-sm-12">
                                     <div class="alert alert-danger hidden" id="validation-errors"></div>
                                 </div>
                             </div>
