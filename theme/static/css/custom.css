@@ -544,29 +544,68 @@ section#pricing{
 }
 
 .speakers-member.organizers .member-desc h5 {
-    line-height: normal;
-    min-height: 38px;
+    line-height: 20px;
+    height: 38px;
+    overflow: hidden;
 }
 #sponsors { text-align: center; }
 #sponsors .col-md-3 {
     float: none;
     display: inline-block;
 }
-.registration-information .checkboxes ul { margin: 0 0 0 4px; }
-.registration-information .checkboxes ul li {
-display: inline-block;
-vertical-align: top;
-width: 50%;
-margin: 0 0 10px -4px;
+.registration-information .checkboxes ul {
+    margin: 5px 0 0 4px;
+    line-height: 22px;
 }
-.registration-information .checkboxes ul input[type=checkbox] { margin: 4px 5px 0 0; }
+.registration-information .checkboxes ul li {
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+    margin: 0 0 12px -4px;
+    padding: 0 0 0 20px;
+    position: relative;
+}
+.registration-information .checkboxes ul input[type=checkbox] {
+    margin: 5px 5px 0 0;
+    position: absolute;
+    left: 0;
+}
 .registration-information .checkboxes { padding: 0 15px; }
 #buy-ticket { float: right; }
-@media (max-width: 767px){
-.registration-information .checkboxes ul { margin: 0; }
-.registration-information .checkboxes ul li {
-display: block;
-width: 100%;
-margin: 0 0 10px;
+.registration-information .checkboxes .note {
+    display: block;
+    color: red;
+    margin: -10px 0 15px;
+    font-size: 12px;
 }
+.editable-original ul li { list-style: disc; }
+.editable-original .instructions {
+    text-transform: uppercase;
+    color: #000;
+    margin: 0 0 0 -16px;
+    font-size: 18px;
+}
+.speakers-member .member-desc h6 {
+    font-size: 13px;
+    line-height: 16px;
+    height: 34px;
+    overflow: hidden;
+    margin-bottom: 7px;
+}
+#organizers { text-align: center; }
+#organizers .col-xs-12 {
+    float: none;
+    display: inline-block;
+    vertical-align: top;
+}
+@media (max-width: 991px){
+    #organizers .col-xs-12 { margin: 0 0 0 -4px; }
+}
+@media (max-width: 767px){
+    .registration-information .checkboxes ul { margin: 0; }
+    .registration-information .checkboxes ul li {
+        display: block;
+        width: 100%;
+        margin: 0 0 10px;
+    }
 }
