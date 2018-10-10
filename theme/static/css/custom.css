@@ -578,8 +578,8 @@ section#pricing{
     margin: -10px 0 15px;
     font-size: 12px;
 }
-.editable-original ul li { list-style: disc; }
-.editable-original .instructions {
+#pricing ul li { list-style: disc; }
+#pricing .instructions {
     text-transform: uppercase;
     color: #000;
     margin: 0 0 0 -16px;
