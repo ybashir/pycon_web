@@ -359,6 +359,6 @@ RICHTEXT_ALLOWED_ATTRIBUTES = (
 'id', 'ismap', 'label', 'lang', 'longdesc', 'maxlength', 'media', 'method', 'multiple', 'name', 'nohref', 'noshade',
 'nowrap', 'prompt', 'readonly', 'rel', 'rev', 'rows', 'rowspan', 'rules', 'scope', 'selected', 'shape', 'size', 'span',
 'src', 'start', 'style', 'summary', 'tabindex', 'target', 'title', 'type', 'usemap', 'valign', 'value', 'vspace',
-'width', 'xml:lang', 'data-wow-delay', 'aria-hidden', 'data-ride', 'role', 'data-slide')
+'width', 'xml:lang', 'data-wow-delay', 'aria-hidden', 'data-ride', 'role', 'data-slide', 'data-toggle', 'aria-controls')
 
 SEARCH_MODEL_CHOICES = ('blog.BlogPost', )
