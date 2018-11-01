@@ -10,12 +10,12 @@
     {% block main %}
         {{ block.super }}
         {% if request.GET.sent %}
-            <script type="text/javascript">
+            <!-- <script type="text/javascript">
                 window.location.href = "https://bookme.pk/events/PyCon_Pakistan";
-            </script>
-            {% comment %}{% editable page.form.response %}
+            </script> -->
+            {% editable page.form.response %}
                 {{ page.form.response|richtext_filters|safe }}
-            {% endeditable %}{% endcomment %}
+            {% endeditable %}
         {% else %}
             {% with page.form as page_form %}
                 {% editable page_form.content %}
@@ -71,7 +71,7 @@
                                     <div class="row">
                                         <div class="checkboxes col-md-8 col-md-offset-2">
                                             {% render_field fields.8 %}
-                                            <span class="note">*Discount Offer: 20% discount on bundle of 5-9 tickets, 25% discount on bundle of 10 or more tickets</span>
+                                            <span class="note">*Discount Offer: 20% discount on bundle of 5-9 tickets, 25% discount on bundle of 10 or more tickets. For those interested in discount offer, email directly at <a href="mailto:info@pycon.pk">info@pycon.pk</a></span>
                                             {% render_field fields.9 %}
                                         </div>
                                     </div>
