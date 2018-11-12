@@ -714,6 +714,12 @@ section#pricing{
     top: 80px;
     width: 100%;
 }
+#blog .blog-item .blog-image img {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+}
 @media (max-width: 991px){
     #organizers .col-xs-12 { margin: 0 0 0 -4px; }
     .schedule-table .sticky-table { top: 130px; }
