@@ -41,7 +41,12 @@
                 {% endfor %}
                 <!-- Buy Tickets Section -->
                 <div class="container">
-                    <div class="">
+                    <div>
+                        <h4 class="text-danger text-center">
+                            <div class="alert alert-danger">Registration Closed!</div>
+                        </h4>
+                    </div>
+                    <div class="overlay">
                         <div class="row">
                             <!-- Select Tickets -->
                             <div class="form-widget">
@@ -76,17 +81,6 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <div class="alert alert-danger hidden" id="validation-errors"></div>
-                                </div>
-                            </div>
-                            <!-- Select Tickets -->
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <input class="btn btn-common wow" type="submit" value="{{ page.form.button_text }}">
                             </div>
                         </div>
                     </div>
