@@ -20,12 +20,12 @@
 }
 
 #sponsors .spnsors-logo{
-    line-height: 250px;
-    height: 250px;
+    line-height: 270px;
+    height: 270px;
     padding: 0 30px;
     margin-bottom: 30px;
 }
-speakers-member{
+.speakers-member{
     overflow: hidden;
 }
 .blog-image{
@@ -552,6 +552,7 @@ section#pricing{
 #sponsors .col-md-3 {
     float: none;
     display: inline-block;
+    width: 34%;
 }
 .registration-information .checkboxes ul {
     margin: 5px 0 0 4px;
@@ -723,6 +724,7 @@ section#pricing{
 @media (max-width: 991px){
     #organizers .col-xs-12 { margin: 0 0 0 -4px; }
     .schedule-table .sticky-table { top: 130px; }
+    #sponsors .col-md-3 { width: 45%; }
 }
 @media (max-width: 767px){
     .registration-information .checkboxes ul { margin: 0; }
@@ -733,4 +735,9 @@ section#pricing{
     }
     .schedule-table .sticky-table { top: 67px; }
     .schedule-table .sticky-table .table-responsive { margin: 0; }
+    #sponsors .col-md-3 { width: 100%; }
+    #sponsors .spnsors-logo {
+        height: 230px;
+        line-height: 230px;
+    }
 }

@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load i18n mezzanine_tags sponsor_tags %}
+{% load i18n mezzanine_tags sponsor_tags media_tags venue_tags %}
 
 {% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Our Sponsors - PyCon Pakistan" %}
 {% endif %}{% endblock %}
@@ -20,6 +20,28 @@
             </div>
             <p class="text-center">Interested in sponsoring PyCon Pakistan? Find more about our
                 <a href="/static/media/uploads/pycon_2018_proposal.compressed.pdf" target="_blank">sponsorship packages.</a></p>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="section-title wow fadeInUp">Media Partners</h2>
+                </div>
+                {% all_media as media %}
+                {% for media in media reversed %}
+                    {% include 'generic/sponsor.html' with sponsor=media MEDIA_URL=MEDIA_URL only %}
+                {% endfor %}
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="section-title wow fadeInUp">Venue Partners</h2>
+                </div>
+                {% all_venue as venue %}
+                {% for venue in venue reversed %}
+                    {% include 'generic/sponsor.html' with sponsor=venue MEDIA_URL=MEDIA_URL only %}
+                {% endfor %}
+            </div>
         </div>
     </section>
 {% endblock %}
