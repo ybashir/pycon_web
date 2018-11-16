@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% load i18n mezzanine_tags blog_tags speaker_tags slides_tags gallery_tags sponsor_tags %}
+{% load i18n mezzanine_tags blog_tags speaker_tags slides_tags gallery_tags sponsor_tags media_tags venue_tags %}
 
 
 {% block meta_title %}{% if page %}{{ page.meta_title }}{% else %}{% trans "Home - PyCon Pakistan" %}
@@ -172,42 +172,6 @@
     </section>
     <!-- Featured Section End -->
     <p></p>
-    <!-- Sponsors Section Start -->
-    <!--<section class="section" id="sponsors">-->
-        <!--<div class="container">-->
-            <!--<div class="row">-->
-                <!--<div class="col-md-12">-->
-                    <!--<h2 class="section-title wow fadeInUp">Our Sponsors</h2>-->
-                    <!--<p class="section-subcontent wow fadeInUp">Sponsors are what will make this conference possible.</p>-->
-                <!--</div>-->
-                <!--{% featured_sponsors 4 as sponsors %}-->
-                <!--{% for sponsor in sponsors reversed%}-->
-                    <!--{% include 'generic/sponsor.html' with sponsor=sponsor MEDIA_URL=MEDIA_URL only %}-->
-                <!--{% endfor %}-->
-
-            <!--</div>-->
-        <!--<div class="row">-->
-            <!--<div class="col-md-12 text-center">-->
-                <!--<h3>Want to contribute?</h3>-->
-                <!--<p>If you have any questions about sponsoring PyCon, <a href="/contact-us">contact us</a></p>-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div class="row" style="margin-top: 40px;">-->
-            <!--<div class="col-md-12">-->
-                <!--<h2 class="section-title wow fadeInUp animated" style="visibility: visible;">Our media Partner</h2>-->
-            <!--</div>-->
-            <!--<div class="col-md-3 col-sm-6 col-xs-12" style="float: none;margin: auto;display: table;">-->
-                <!--<div class="spnsors-logo wow fadeInUp animated" style="visibility: visible;">-->
-                    <!--<a href="https://www.dawn.com/">-->
-                        <!--<img alt="" src="/static/media/uploads/dawnnew.png">-->
-                    <!--</a>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--</div>-->
-    <!--</section>-->
-    <!-- Sponsors Section End -->
-    <p></p>
     <!-- Gallery Section Start -->
     <section class="section" id="gallery">
         <div class="container">
@@ -267,7 +231,24 @@
                 {% for sponsor in sponsors reversed%}
                     {% include 'generic/sponsor.html' with sponsor=sponsor MEDIA_URL=MEDIA_URL only %}
                 {% endfor %}
-
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="section-title wow fadeInUp">Media Partners</h2>
+                </div>
+                {% featured_media 10 as media %}
+                {% for media in media reversed%}
+                    {% include 'generic/sponsor.html' with sponsor=media MEDIA_URL=MEDIA_URL only %}
+                {% endfor %}
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="section-title wow fadeInUp">Venue Partners</h2>
+                </div>
+                {% featured_venue 10 as venue %}
+                {% for venue in venue reversed%}
+                    {% include 'generic/sponsor.html' with sponsor=venue MEDIA_URL=MEDIA_URL only %}
+                {% endfor %}
             </div>
         <!--<div class="row">-->
             <!--<div class="col-md-12 text-center">-->

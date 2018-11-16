@@ -82,3 +82,23 @@ class Sponsor(Displayable):
                      format="Image", max_length=255)
     link = models.URLField()
     featured = models.BooleanField(default=False)
+
+
+class Media(Displayable):
+    def get_absolute_url(self):
+        pass
+
+    logo = FileField(verbose_name=_("Logo"), upload_to=upload_to("", "media"),
+                     format="Image", max_length=255)
+    link = models.URLField()
+    featured = models.BooleanField(default=False)
+
+
+class Venue(Displayable):
+    def get_absolute_url(self):
+        pass
+
+    logo = FileField(verbose_name=_("Logo"), upload_to=upload_to("", "venue"),
+                     format="Image", max_length=255)
+    link = models.URLField()
+    featured = models.BooleanField(default=False)
