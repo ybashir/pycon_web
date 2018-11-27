@@ -549,6 +549,7 @@ section#pricing{
     overflow: hidden;
 }
 #sponsors { text-align: center; }
+.dropdown-submenu #sponsors { text-align: left; }
 #sponsors .col-md-3 {
     float: none;
     display: inline-block;
