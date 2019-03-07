@@ -60,6 +60,8 @@ class Gallery(Displayable):
     gallery_description = models.TextField(null=True, blank=True)
     thumbnail = FileField(verbose_name=_("Thumbnail"), upload_to=upload_to("", "gallery_thumbs"),
                           format="Image", max_length=255)
+    is_video = models.BooleanField(default=False)
+    video_link = models.CharField(null=True, blank=True, max_length=300)
 
     def get_absolute_url(self):
         return reverse('gallery_detail', args=[self.slug])

@@ -742,3 +742,9 @@ section#pricing{
         line-height: 230px;
     }
 }
+
+.nivo-lightbox-content {
+    max-width: 1150px;
+    margin-left: auto;
+    margin-right: auto;
+}
