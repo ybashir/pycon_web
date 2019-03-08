@@ -29,7 +29,7 @@ class GalleryImageInline(TabularDynamicInlineAdmin):
 
 
 class GalleryAdmin(DisplayableAdmin):
-    fieldsets = ((None, {'fields': ('title', 'thumbnail', 'gallery_description')}),)
+    fieldsets = ((None, {'fields': ('title', 'thumbnail', 'gallery_description', 'is_video', 'video_link')}),)
     list_display = ('title', 'status')
     inlines = [GalleryImageInline]
 

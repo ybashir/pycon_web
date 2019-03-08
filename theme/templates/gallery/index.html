@@ -23,12 +23,18 @@
                     <div class="gallery-item"><a href="#"><img alt="" src="{{ MEDIA_URL }}{{ gallery.thumbnail }}"/></a>
                         <div class="overlay">
                             <div class="icons">
+                                {% if gallery.is_video %}
+                                    <a class="preview lightbox" data-lightbox-type="iframe" href="{{ gallery.video_link }}">
+                                    <i class="icon-eye"></i>
+                                </a>
+                                {% else %}
                                 <a class="preview lightbox" href="{{ MEDIA_URL }}{{ gallery.thumbnail }}">
                                     <i class="icon-eye"></i>
                                 </a>
                                 <a class="link" href="{{ gallery.get_absolute_url }}">
                                     <i class="icon-link"></i>
                                 </a>
+                                {% endif %}
                             </div>
 
                         </div>
