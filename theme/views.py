@@ -15,7 +15,7 @@ class GalleryIndexView(generic.ListView):
     context_object_name = 'galleries'
 
     def get_queryset(self):
-        return Gallery.objects.published()
+        return Gallery.objects.published().order_by('-created')
 
 
 class GalleryDetailView(generic.DetailView):
