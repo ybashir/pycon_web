@@ -229,8 +229,14 @@
                     <p class="section-subcontent wow fadeInUp">Sponsors are what will make this conference possible.</p>
                 </div>
                 {% featured_sponsors 10 as sponsors %}
-                {% for sponsor in sponsors reversed%}
-                    {% include 'generic/sponsor.html' with sponsor=sponsor MEDIA_URL=MEDIA_URL only %}
+                {% for sponsor_type, sponsors_list in sponsors.items %}
+                    {% if sponsor_type %}
+                        <h3>{{ sponsor_type }}</h3>
+                    {% endif %}
+
+                    {% for sponsor in sponsors_list %}
+                        {% include 'generic/sponsor.html' with sponsor=sponsor MEDIA_URL=MEDIA_URL only %}
+                    {% endfor %}
                 {% endfor %}
             </div>
             <p class="text-center">Interested in sponsoring PyCon Pakistan? Find more about our
