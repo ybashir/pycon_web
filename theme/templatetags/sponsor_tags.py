@@ -1,11 +1,12 @@
 from theme.models import Sponsor
 from django import template
+from collections import OrderedDict
 
 
 register = template.Library()
 
 def preprocess_sponsors(sponsors):
-    sponsors_dict = {}
+    sponsors_dict = OrderedDict()
     for sponsor in sponsors:
         key = sponsor.sponsor_type.title if sponsor.sponsor_type else ""
         
