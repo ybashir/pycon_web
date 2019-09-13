@@ -14,8 +14,14 @@
                     <h2 class="section-title wow fadeInUp">Our Sponsors</h2>
                 </div>
                 {% all_sponsors as sponsors %}
-                {% for sponsor in sponsors reversed %}
-                    {% include 'generic/sponsor.html' with sponsor=sponsor MEDIA_URL=MEDIA_URL only %}
+                {% for sponsor_type, sponsors_list in sponsors.items %}
+                    {% if sponsor_type %}
+                        <h3>{{ sponsor_type }}</h3>
+                    {% endif %}
+
+                    {% for sponsor in sponsors_list %}
+                        {% include 'generic/sponsor.html' with sponsor=sponsor MEDIA_URL=MEDIA_URL only %}
+                    {% endfor %}
                 {% endfor %}
             </div>
             <p class="text-center">Interested in sponsoring PyCon Pakistan? Find more about our

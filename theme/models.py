@@ -75,6 +75,9 @@ class GalleryImage(models.Model):
     def __unicode__(self):
         return self.gallery.title
 
+class SponsorType(Displayable):
+    title = models.CharField(null=True, blank=True, max_length=100)
+    order = models.IntegerField(default=0)
 
 class Sponsor(Displayable):
     def get_absolute_url(self):
@@ -84,7 +87,7 @@ class Sponsor(Displayable):
                      format="Image", max_length=255)
     link = models.URLField()
     featured = models.BooleanField(default=False)
-
+    sponsor_type = models.ForeignKey(SponsorType, null=True, blank=True, on_delete=models.SET_NULL)
 
 class Media(Displayable):
     def get_absolute_url(self):
