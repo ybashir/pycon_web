@@ -23,4 +23,4 @@ def featured_sponsors(limit=4):
 
 @register.simple_tag
 def all_sponsors():
-    return preprocess_sponsors(list(Sponsor.objects.all()))
+    return preprocess_sponsors(list(Sponsor.objects.all().order_by('sponsor_type__order', 'title')))
