@@ -748,3 +748,11 @@ section#pricing{
     margin-left: auto;
     margin-right: auto;
 }
+
+/* Pycon 2024 */
+/* Hide countdown and event details */
+
+#carousel-area .carousel-inner .carousel-caption ,
+#carousel-area .carousel-inner .item:after, .countdown-timer, #event {
+    display: none;
+}
